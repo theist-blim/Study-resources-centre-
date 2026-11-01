@@ -1,0 +1,95 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyConnect Uganda | P1-S6 Study Resources | CEO Daniel</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f0f9ff;color:#0f172a}
+header{background:#0f172a;color:white;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:18px}.logo span{color:#38bdf8}
+.btn{padding:10px 16px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+.btn-blue{background:#0ea5e9;color:white}.btn-yellow{background:#FFCC00;color:#000}
+.hero{background:radial-gradient(800px at 20% 20%, #1e3a5f 0%, #0f172a 100%);color:white;padding:40px 16px;text-align:center}
+.hero h1{font-size:32px;line-height:1.1}.hero h1 span{color:#38bdf8}
+.levels{display:flex;gap:10px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.levels button{padding:12px 20px;border-radius:30px;border:2px solid #0ea5e9;background:white;color:#0ea5e9;font-weight:700;cursor:pointer}
+.levels button.active,.levels button:hover{background:#0ea5e9;color:white}
+.slideshow{max-width:900px;margin:24px auto;position:relative;border-radius:16px;overflow:hidden;height:280px}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;display:flex;align-items:center;justify-content:center;color:white;font-size:24px;font-weight:800;background-size:cover;background-position:center}
+.slide.active{opacity:1}.slide::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.slide span{position:relative;z-index:1;text-align:center}
+.search{max-width:600px;margin:20px auto;display:flex;gap:8px}
+.search input{flex:1;padding:14px;border-radius:12px;border:1px solid #e2e8f0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:16px;max-width:1100px;margin:0 auto}
+.card{background:white;padding:18px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.06);border-left:5px solid #0ea5e9}
+.card h3{margin-bottom:6px}.card p{color:#64748b;font-size:13px;margin:4px 0}
+.tags{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}
+.tags span{background:#e0f2fe;color:#0c4a6e;padding:4px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.card a{display:block;margin-top:8px;background:#0ea5e9;color:white;padding:10px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold}
+.card a.green{background:#22c55e}
+footer{text-align:center;padding:20px;color:#64748b;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">StudyConnect <span>Uganda</span></div>
+<button class="btn btn-blue">+ Upload Notes</button>
+</header>
+
+<div class="hero">
+<h1>Study Online <span>P1 to S6</span></h1>
+<p>Free Notes, Past Papers, Quizzes for Ugandan Students — By CEO Daniel</p>
+<div class="search">
+<input id="search" placeholder="Search Math, Science, English, UNEB..." onkeyup="filterSub()">
+<button class="btn btn-blue">Search</button>
+</div>
+
+<div class="slideshow">
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b')"><span>📚 P1-P7 Primary Notes</span></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f')"><span>🎓 S1-S4 Secondary</span></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173')"><span>📝 UNEB Past Papers</span></div>
+</div>
+
+<div class="levels">
+<button class="active">All Levels</button>
+<button onclick="filterLevel('Primary')">Primary P1-P7</button>
+<button onclick="filterLevel('Secondary')">Secondary S1-S4</button>
+<button onclick="filterLevel('A-Level')">A-Level S5-S6</button>
+</div>
+</div>
+
+<div class="grid" id="grid">
+<div class="card">
+<h3>📘 Math P7 - Fractions</h3><p>Primary 7 • By Teacher John</p>
+<div class="tags"><span>Notes</span><span>PDF</span><span>Free</span></div>
+<a href="#">📥 Download Notes</a><a href="#" class="green">▶️ Watch Video</a>
+</div>
+<div class="card">
+<h3>🔬 Science S2 - Cells</h3><p>Secondary 2 • Biology</p>
+<div class="tags"><span>Video</span><span>Quiz</span></div>
+<a href="#">📥 Notes</a><a href="#" class="green">🧠 Take Quiz</a>
+</div>
+<div class="card">
+<h3>📝 UNEB PLE 2023 Math</h3><p>Primary Leaving Exam</p>
+<div class="tags"><span>Past Paper</span><span>Answers</span></div>
+<a href="#">📥 Download Paper</a>
+</div>
+<div class="card">
+<h3>📖 English S4 Grammar</h3><p>Secondary 4 • Grammar</p>
+<div class="tags"><span>Notes</span><span>Exercises</span></div>
+<a href="#">📥 Download</a>
+</div>
+</div>
+
+<footer>© 2026 StudyConnect Uganda — Built by CEO Daniel — study-connect-uganda.github.io</footer>
+
+<script>
+let cur=0;const slides=document.querySelectorAll('.slide');
+setInterval(()=>{slides[cur].classList.remove('active');cur=(cur+1)%slides.length;slides[cur].classList.add('active')},3000);
+function filterSub(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'':'none'})}
+function filterLevel(l){if(l=='Primary')filterSub('primary'); document.querySelectorAll('.card').forEach(c=>{c.style.display=l=='All'||c.innerText.includes(l)?'':'none'})}
+</script>
+</body>
+</html>￼Enter
