@@ -13,9 +13,8 @@ body{background:#f8fbff;color:#1e293b}
 .join{background:#facc15;color:#000;padding:6px 14px;border-radius:20px;text-decoration:none;font-weight:800}
 .hero{max-width:1200px;margin:16px auto;background:linear-gradient(135deg,#dbeafe 0%,#fef3c7 40%,#dbeafe 100%);border-radius:20px;padding:18px;display:flex;flex-wrap:wrap;gap:18px}
 .hero-left{flex:1.1;min-width:320px}.hero-left h1{font-size:32px;color:#1e3a8a;font-weight:900;line-height:1.05}
-.hero-left p{font-size:12px;color:#475569;margin:10px 0}.btns{display:flex;gap:8px;flex-wrap:wrap}
-.btn-free{background:#facc15;color:#000;padding:8px 16px;border-radius:20px;font-weight:800;font-size:12px;text-decoration:none}
-.btn-down{background:white;border:1.5px solid #1e3a8a;color:#1e3a8a;padding:8px 16px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none}
+.hero-left p{font-size:12px;color:#475569;margin:10px 0;line-height:1.5}
+.btns{display:flex;gap:8px;flex-wrap:wrap}.btn-free{background:#facc15;color:#000;padding:8px 16px;border-radius:20px;font-weight:800;font-size:12px;text-decoration:none}.btn-down{background:white;border:1.5px solid #1e3a8a;color:#1e3a8a;padding:8px 16px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none}
 .stats{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#475569;margin-top:10px}
 .hero-right{flex:0.9;min-width:340px;position:relative}
 .slideshow{position:relative;width:100%;height:380px;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.15);background:#000}
@@ -56,9 +55,9 @@ body{background:#f8fbff;color:#1e293b}
 <div class="hero">
 <div class="hero-left"><h1>Learn Smarter.<br>Pass with Confidence.</h1><p>Free lessons, notes & past papers for P1-P7 & S1-S6 Ugandan National Curriculum. <b>CEO Dr Daniel - "Never plan to kill a dream" - Real Photo - Mityana, Uganda. Biology 7 in 1 + Pay only 300/= to 0777353793 Instant MTN</b></p><div class="btns"><a class="btn-free" href="#share">Start Learning → Free</a><a class="btn-down" href="#past">Download Past Papers</a></div><div class="stats"><div>👤 10,000+ Learners</div><div>📄 1,000+ Past Papers</div><div>✅ 100% UNEB-Aligned</div><div>🧬 Biology 7 in 1</div></div></div>
 <div class="hero-right"><div class="slideshow" id="slideshow">
-<div class="slide active"><img src="ceo.jpg" alt="CEO Dr Daniel Real Photo"><div class="slide-caption"><b>CEO Dr Daniel - Real Photo - "Never plan to kill a dream"</b>White mask, white coat, yellow shirt - Your real photo 100% - No AI</div></div>
-<div class="slide"><img src="students.jpg" alt="CEO with Students"><div class="slide-caption"><b>CEO Surrounded by Learners - Mityana</b>Biology Cell Structure: Cell Wall, Nucleus, Chloroplast, Mitochondria - Real photo</div></div>
-<div class="slide"><img src="books.jpg" alt="Biology Books"><div class="slide-caption"><b>Biology 7 in 1 Compiled</b>1 FREE Always + Share 5 Groups = 2 FREE + Pay 300 to 0777353793 Instant</div></div>
+<div class="slide active"><img src="ceo.jpg" onerror="this.src='https://via.placeholder.com/400x380?text=Upload+ceo.jpg'" alt="CEO Dr Daniel Real Photo"><div class="slide-caption"><b>CEO Dr Daniel - Real Photo - "Never plan to kill a dream"</b>White mask, white coat, yellow shirt - Your real photo 100% - No AI</div></div>
+<div class="slide"><img src="students.jpg" onerror="this.src='ceo.jpg'" alt="CEO with Students"><div class="slide-caption"><b>CEO Surrounded by Learners - Mityana</b>Biology Cell Structure: Cell Wall, Nucleus, Chloroplast, Mitochondria - Real photo</div></div>
+<div class="slide"><img src="books.jpg" onerror="this.src='ceo.jpg'" alt="Biology Books"><div class="slide-caption"><b>Biology 7 in 1 Compiled</b>1 FREE Always + Share 5 Groups = 2 FREE + Pay 300 to 0777353793 Instant</div></div>
 <div class="dots"><div class="dot active" onclick="goSlide(0)"></div><div class="dot" onclick="goSlide(1)"></div><div class="dot" onclick="goSlide(2)"></div></div>
 </div></div>
 </div>
@@ -102,4 +101,4 @@ let curLink='';function openPay(l){curLink=l;document.getElementById('payModal')
 function openBiology(){document.getElementById('bioModal').style.display='flex';updateUI();}function closeBiology(){document.getElementById('bioModal').style.display='none'}
 </script>
 </body>
-                                                                                                                             </html>
+  </html>
