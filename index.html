@@ -2,126 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mityana Study Hub - Learn Smarter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mityana Study Hub - Learn Smarter, Pass with Confidence</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{background:#f8fafc}
-.topbar{background:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.06);position:sticky;top:0;z-index:100}
-.logo{font-weight:900;color:#1e3a8a;font-size:18px}
-.btn-join{background:#facc15;padding:8px 14px;border-radius:20px;color:#000;text-decoration:none;font-weight:800;font-size:11px}
-.hero{background:linear-gradient(135deg,#dbeafe 0%,#fef3c7 100%);padding:22px 18px}
-.hero h1{font-size:26px;color:#1e3a8a;line-height:1.15;font-weight:900}
-.hero p{font-size:12px;color:#475569;margin:10px 0;line-height:1.5}
-/* SLIDESHOW */
-.slideshow{position:relative;height:220px;border-radius:14px;overflow:hidden;margin:14px 0;background:#111}
-.slide{position:absolute;inset:0;opacity:0;transition:1s;background-size:cover;background-position:center;display:flex;align-items:flex-end}
+.topbar{background:white;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100}
+.logo{font-weight:800;color:#1e3a8a;font-size:20px;display:flex;align-items:center;gap:8px}
+.nav{display:flex;gap:14px;font-size:13px;font-weight:600}
+.nav a{text-decoration:none;color:#334155} .nav a.active{color:#f59e0b;border-bottom:2px solid #f59e0b}
+.btn-join{background:#facc15;padding:8px 16px;border-radius:20px;color:#000!important;text-decoration:none;font-weight:700;font-size:12px}
+.hero{background:linear-gradient(120deg,#dbeafe 0%,#fef3c7 100%);padding:30px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;border-radius:0 0 20px 20px}
+.hero-text{flex:1;min-width:300px}
+.hero-text h1{font-size:32px;color:#1e3a8a;line-height:1.2;font-weight:800}
+.hero-text p{font-size:13px;color:#475569;margin:12px 0;line-height:1.5}
+.hero-btns{display:flex;gap:10px;margin:15px 0}
+.hb{padding:10px 18px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none}
+.hb1{background:#facc15;color:#000} .hb2{background:white;border:1.5px solid #1e3a8a;color:#1e3a8a}
+.hero-stats{display:flex;gap:22px;margin-top:18px}
+.hs{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569}
+.hs b{font-size:13px;color:#1e3a8a}
+/* SLIDESHOW ADDED */
+.slideshow{flex:1;min-width:300px;height:220px;border-radius:14px;overflow:hidden;position:relative;background:#111}
+.slide{position:absolute;inset:0;opacity:0;transition:1s;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:14px}
 .slide.on{opacity:1}
-.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#000 80%,transparent)}
-.sc{position:relative;z-index:2;padding:14px;color:#fff}
-.sc b{font-size:16px;display:block}
-.sc p{font-size:11px;opacity:.9;margin:4px 0}
-.ph{background:#facc15;color:#000;padding:5px 10px;border-radius:20px;font-weight:900;font-size:11px;display:inline-block;margin-top:6px}
-.dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5)}
+.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.8) 0%,transparent 60%)}
+.sc{position:relative;z-index:2;color:#fff}
+.sc b{font-size:14px;display:block}
+.sc p{font-size:11px}
+.ph{background:#facc15;color:#000;padding:4px 10px;border-radius:20px;font-weight:900;font-size:10px;display:inline-block;margin-top:5px}
+.dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:3}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5)}
 .dot.on{background:#facc15}
-.main{max-width:1100px;margin:0 auto;padding:14px}
-.card{background:#fff;border-radius:14px;padding:14px;box-shadow:0 4px 16px rgba(0,0,0,.06);margin-bottom:12px}
-.h-title{text-align:center;color:#1e3a8a;font-weight:800;font-size:16px}
-.sub{text-align:center;color:#64748b;font-size:11px;margin:6px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.subj{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:8px;display:flex;align-items:center;gap:6px}
-.subj b{font-size:10px;color:#1e293b}.subj span{font-size:9px;color:#64748b;display:block}
-.bio-list{border:2px solid #1e3a8a}
-.bio-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #f1f5f9;gap:8px}
+.section{padding:25px 20px;max-width:1100px;margin:0 auto}
+.section h2{text-align:center;color:#1e3a8a;font-size:20px}
+.sub{text-align:center;font-size:12px;color:#64748b;margin:6px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.sub-card{background:white;padding:12px;border-radius:12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.04);border:1px solid #e2e8f0}
+.sub-card .icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.icon-yellow{background:#fef3c7} .icon-blue{background:#dbeafe} .icon-green{background:#dcfce7}
+.sub-card b{font-size:12px;color:#1e293b} .sub-card span{font-size:10px;color:#64748b;display:block}
+.past-title{text-align:center;margin:25px 0 10px}
+.past{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.past-box{background:#1e3a8a;color:white;padding:20px;border-radius:14px}
+.past-box h3{font-size:14px;display:flex;align-items:center;gap:8px}
+.past-box p{font-size:11px;opacity:0.85;margin:10px 0;line-height:1.4}
+.past-box a{background:#facc15;color:#000;padding:8px 14px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;display:inline-block}
+.why{display:flex;gap:20px;flex-wrap:wrap;margin:15px 0}
+.why-box{flex:1;min-width:200px}
+.why-item{display:flex;gap:10px;margin:10px 0}
+.why-item b{font-size:12px;color:#1e3a8a} .why-item span{font-size:11px;color:#64748b;display:block}
+.bio-list{background:white;border-radius:15px;padding:18px;box-shadow:0 5px 20px rgba(0,0,0,0.06);margin:20px 0;border:2px solid #1e3a8a}
+.bio-item{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #f1f5f9}
 .bio-item:last-child{border:0}
-.bio-item b{font-size:11px;color:#1e293b;display:block}
-.bio-item span{font-size:9px;color:#64748b}
-.pay{background:linear-gradient(90deg,#1e3a8a,#10B981);color:#fff;padding:8px 12px;border-radius:20px;font-size:10px;font-weight:800;border:none;cursor:pointer;white-space:nowrap}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:999;align-items:center;justify-content:center;padding:16px}
-.mbox{background:#fff;border-radius:16px;padding:20px;max-width:380px;width:100%;text-align:center}
-.mtn-box{border:2px solid #ffcc00;border-radius:12px;display:flex;overflow:hidden;margin:10px 0;text-align:left}
-.mtn-left{width:80px;background:#ffcc00;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px}
-.mtn-right{flex:1;padding:8px;background:#111;color:#fff;font-size:11px;line-height:1.4}
-.mtn{background:#ffcc00;color:#000;padding:11px;border-radius:10px;font-weight:900;display:block;margin:8px 0;text-decoration:none;border:2px solid #000;font-size:12px;text-align:center}
-.inp{width:100%;padding:10px;border:1.5px solid #cbd5e1;border-radius:8px;margin:8px 0;font-size:11px}
-.btn-verify{width:100%;padding:11px;background:linear-gradient(90deg,#1e3a8a,#10B981);color:#fff;border:none;border-radius:10px;font-weight:900;font-size:12px}
-.footer{background:#1e3a8a;color:#fff;padding:20px 16px;margin-top:20px;font-size:10px}
+.pay-btn{background:linear-gradient(90deg,#1e3a8a,#10B981);color:white;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:11px;border:none;cursor:pointer}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:300;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:white;border-radius:16px;padding:26px;max-width:400px;width:100%;text-align:center}
+.mtn{background:#ffcc00;color:#000;padding:13px;border-radius:10px;font-weight:800;display:block;margin:8px 0;text-decoration:none;border:2px solid #000}
+.airtel{background:#ff0000;color:white;padding:13px;border-radius:10px;font-weight:800;display:block;margin:8px 0;text-decoration:none}
+.footer{background:#1e3a8a;color:white;padding:28px 20px;margin-top:30px}
+.footer a{color:#facc15;text-decoration:none;font-size:12px}
+@media(max-width:700px){.past{grid-template-columns:1fr}.nav{display:none}.hero-text h1{font-size:24px}}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="logo">📚 Mityana Study Hub</div><a class="btn-join" href="#biology">Join Free</a></div>
+
+<div class="topbar">
+<div class="logo">📚 Mityana Study Hub</div>
+<div class="nav"><a class="active" href="#">Home</a><a href="#">Subjects</a><a href="#">Past Papers</a><a href="#">Resources</a><a href="#">Exams</a><a href="#">Blog</a></div>
+<a class="btn-join" href="#">Join Free</a>
+</div>
 
 <div class="hero">
+<div class="hero-text">
 <h1>Learn Smarter.<br>Pass with Confidence.</h1>
-<p>Free lessons, notes & past papers for P1-P7 & S1-S6 following Ugandan National Curriculum. UNEB-Aligned.</p>
+<p>Free lessons, notes & past papers for P1-P7 & S1-S6 following the Ugandan National Curriculum. Now with instant download for Shs 600.</p>
+<div class="hero-btns"><a class="hb hb1" href="#biology">Start Learning → Free</a><a class="hb hb2" href="#biology">Download Past Papers</a></div>
+<div class="hero-stats">
+<div class="hs">👤 <div><b>10,000+</b><br>Learners</div></div>
+<div class="hs">📄 <div><b>1,000+</b><br>Past Papers</div></div>
+<div class="hs">✅ <div><b>100%</b><br>UNEB-Aligned</div></div>
+</div>
+</div>
 
-<!-- SLIDESHOW - 3 SLIDES -->
+<!-- SLIDESHOW WITH YOUR NUMBERS -->
 <div class="slideshow" id="slideshow">
-<div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f')"><div class="sc"><b>📚 Mityana Study Hub</b><p>Provide all resources aiming at excellence</p><div class="ph">📞 0777353793 / 0782779663</div></div></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b')"><div class="sc"><b>💰 MTN MoMo Payment</b><p>Shs 600 Each → Pay to 0777353793 FIRST NUMBER</p><div class="ph">*165*3# → 0777353793 → 600/=</div></div></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173')"><div class="sc"><b>🧬 S4 Biology Mocks 2026</b><p>7 Mocks LIVE - Scenario Based - New Curriculum</p><div class="ph">💳 Pay 600/= to 0777353793</div></div></div>
+<div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800')"><div class="sc"><b>📚 Mityana Study Hub</b><p>Provide all resources aiming at excellence</p><div class="ph">📞 0777353793 / 0782779663</div></div></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800')"><div class="sc"><b>💰 MTN MoMo - Shs 600 Each</b><p>Pay to 0777353793 FIRST NUMBER</p><div class="ph">*165*3# → 0777353793 → 600/=</div></div></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800')"><div class="sc"><b>🧬 S4 Biology Mocks 2026</b><p>7 Mocks LIVE - Scenario Based</p><div class="ph">💳 Pay 600/= to 0777353793</div></div></div>
 <div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
 </div>
-
-<div style="text-align:center"><a href="#biology" style="background:#facc15;color:#000;padding:10px 16px;border-radius:20px;font-weight:800;font-size:12px;text-decoration:none;display:inline-block">Start Learning → Free • Pay 600/=</a></div>
 </div>
 
-<div class="main">
-<div class="card">
-<div class="h-title">Explore Subjects by Level</div>
-<div class="sub">Primary (P1-P7) & Secondary (S1-S6)</div>
+<div class="section">
+<h2>Explore Subjects by Level</h2>
+<p class="sub">Primary (P1-P7) & Secondary (S1-S6) — built for the Ugandan curriculum</p>
 <div class="grid">
-<div class="subj"><b>Mathematics</b></div><div class="subj"><b>English</b></div><div class="subj"><b>Science</b></div><div class="subj"><b>Biology 7 LIVE</b></div>
+<div class="sub-card"><div class="icon icon-yellow">🧮</div><div><b>Mathematics</b><span>P1-P7 • S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">📘</div><div><b>English</b><span>P1-P7 • S1-S4</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">🧪</div><div><b>Science</b><span>P1-P7 • S1-S4</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">🌍</div><div><b>Social Studies / Geography</b><span>P1-P7 • S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">🗺️</div><div><b>Geography</b><span>P1-P7 • S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">🎓</div><div><b>UACE</b><span>P1-P7 • S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">⚛️</div><div><b>Physics</b><span>S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">🧫</div><div><b>Chemistry</b><span>S1-S6</span></div></div>
+<div class="sub-card" style="border:2px solid #1e3a8a;background:#eff6ff"><div class="icon icon-green">🌿</div><div><b>Biology</b><span>S1-S6 • 7 LIVE</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">✒️</div><div><b>Literature</b><span>S1-S6</span></div></div>
+</div>
+
+<div class="past-title"><h2>Past Papers — Practice & Access free PLE, UCE, and UACE past papers with marking guides</h2></div>
+<div class="past">
+<div class="past-box"><h3>🏆 PLE – Primary Leaving Exam</h3><p>P7 Past Papers • 2015-2024 • PDFs + Solutions<br><b style="color:#facc15">Shs 600 per paper</b></p><a href="#biology">Browse PLE Papers →</a></div>
+<div class="past-box"><h3>🎓 Uganda Certificate of Education</h3><p>S6 Past Papers • 2015-2024 • All Subjects<br><b style="color:#facc15">S4 Biology Mocks LIVE - 7 files</b></p><a href="#biology">Browse UCE Papers →</a></div>
+</div>
+
+<div id="biology" class="bio-list">
+<h3 style="text-align:center;color:#1e3a8a">🧬 Mityana Study Hub - S4 Biology Mocks 2026</h3>
+<p style="text-align:center;font-size:11px;color:#64748b;margin:6px 0 5px">Wakissha • Buddo • Wunna • Scenario Based • New Curriculum</p>
+<p style="text-align:center;font-size:12px;color:#10B981;font-weight:800;margin-bottom:15px">💳 Pay Shs 600 to 0777353793 to download any document instantly!</p>
+
+<div class="bio-item"><div><b>1. Biology Scenario Based Questions</b><span>Study Sphere • S4 UCE • New Curriculum • PDF</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1IP0HVcH_aFpvY8FlSokryM5apqpOBARO/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>2. Biology Paper 2 Mock 2026</b><span>Wakissha Mock • Scenario Based</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1RE3IHO9NhCBVW_QAYf7raVx82QAwKIZX/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>3. Biology New Curriculum Paper</b><span>S4 • 2026 Mock • Full Paper</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1-AAmkTf7rguHaHabCpC_oJG8nWmkDllx/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>4. Biology Mock File 4</b><span>2026 • Scenario Based • Wakissha</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1XojkddyG_DBRrajYupROP2sMtURIwQtN/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>5. Biology Mock File 5</b><span>Buddo • Wunna • 2026</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/14HHeGt-ld5tZ6mwIttDjFhyerJS79PW7/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>6. Biology Mock File 6</b><span>UCA • S4 Biology • New Format</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1_bkugvLlTAi9RceH1Hj46Pz3p3y16x1T/view?usp=drivesdk')">Pay 600/=</button></div>
+<div class="bio-item"><div><b>7. Biology Mock File 7</b><span>Latest 2026 • Scenario + Marking Guide</span></div><button class="pay-btn" onclick="openPay('https://drive.google.com/file/d/1Aq3Vb3eXtYtYTpFWNQ71kF1KzdkMqu22/view?usp=drivesdk')">Pay 600/=</button></div>
+</div>
+
+<div class="why">
+<div class="why-box">
+<h4 style="color:#1e3a8a;font-size:13px">Why Learners Choose Mityana Study Hub</h4>
+<div class="why-item">✅<div><b>Aligned to UNEB Curriculum</b><span>Content reviewed to match latest Ugandan syllabus</span></div></div>
+<div class="why-item">🎥<div><b>Free Video Lessons</b><span>Short, easy-to-follow lessons for every topic</span></div></div>
+<div class="why-item">📥<div><b>Download for Offline Use</b><span>Save PDFs and study anywhere, even without internet</span></div></div>
+</div>
+<div class="why-box" style="background:#fef3c7;padding:15px;border-radius:12px">
+<h4 style="color:#1e3a8a">💳 Instant Payment - Shs 600 to 0777353793</h4>
+<p style="font-size:11px;color:#475569;margin-top:8px">1. Click Pay 600/= on any document<br>2. Pay via MTN MoMo to 0777353793<br>3. Enter Transaction ID<br>4. Download instantly!<br><br><b>All PDFs unlocked after Shs 600 payment to 0777353793</b></p>
 </div>
 </div>
 
-<div class="card bio-list" id="biology">
-<div class="h-title">🧬 S4 Biology Mocks 2026 - Mityana Study Hub</div>
-<div class="sub">Wakissha • Buddo • Wunna • Scenario Based • Pay Shs 600 to 0777353793</div>
-<div style="text-align:center;background:#dcfce7;color:#065f46;padding:6px;border-radius:20px;font-size:10px;font-weight:800;margin-bottom:10px">💳 MTN MoMo: 0777353793 • Shs 600 per document • Instant download</div>
-
-<div class="bio-item"><div><b>1. Biology Scenario Based Questions</b><span>Study Sphere • S4 UCE • New Curriculum</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1IP0HVcH_aFpvY8FlSokryM5apqpOBARO/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>2. Biology Paper 2 Mock 2026</b><span>Wakissha Mock • Scenario</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1RE3IHO9NhCBVW_QAYf7raVx82QAwKIZX/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>3. Biology New Curriculum Paper</b><span>S4 • 2026 Mock</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1-AAmkTf7rguHaHabCpC_oJG8nWmkDllx/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>4. Biology Mock File 4</b><span>2026 • Scenario Based</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1XojkddyG_DBRrajYupROP2sMtURIwQtN/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>5. Biology Mock File 5</b><span>Buddo • Wunna • 2026</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/14HHeGt-ld5tZ6mwIttDjFhyerJS79PW7/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>6. Biology Mock File 6</b><span>UCA • S4 Biology</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1_bkugvLlTAi9RceH1Hj46Pz3p3y16x1T/view?usp=drivesdk')">Pay 600/=</button></div>
-<div class="bio-item"><div><b>7. Biology Mock File 7</b><span>Latest 2026 • Scenario + Guide</span></div><button class="pay" onclick="openPay('https://drive.google.com/file/d/1Aq3Vb3eXtYtYTpFWNQ71kF1KzdkMqu22/view?usp=drivesdk')">Pay 600/=</button></div>
-</div>
 </div>
 
 <!-- PAYMENT MODAL - YOUR NUMBER 0777353793 -->
 <div id="payModal" class="modal">
-<div class="mbox">
+<div class="modal-box">
 <h3 style="color:#1e3a8a">💳 Pay Shs 600 to 0777353793</h3>
-<p style="font-size:11px;color:#64748b;margin:6px 0">Mityana Study Hub - Instant download</p>
-<div class="mtn-box">
-<div class="mtn-left"><b style="font-size:20px">MTN</b><span style="font-size:9px;font-weight:800">MoMo Pay</span></div>
-<div class="mtn-right">Dial: <b>*165*3# → Send</b><br>Amount: <b style="color:#facc15">Shs 600 EACH</b><br>To: <b style="font-size:16px;color:#facc15">0777353793</b><br>FIRST NUMBER - CEO Daniel<br>Backup: 0782779663</div>
+<p style="font-size:12px;color:#64748b;margin:10px 0">Mityana Study Hub - Instant download</p>
+<div style="background:#111;color:#fff;padding:14px;border-radius:10px;margin:14px 0;border:2px solid #ffcc00;text-align:left">
+Dial: <b style="color:#facc15">*165*3# → Send Money</b><br>
+Amount: <b style="color:#facc15">Shs 600 EACH</b><br>
+To: <b style="font-size:18px;color:#facc15">0777353793</b><br>
+FIRST NUMBER - CEO Daniel<br>
+Backup: 0782779663
 </div>
 <a class="mtn" href="tel:*165*1*1*0777353793*600%23">📱 MTN MoMo → Pay 600/= to 0777353793</a>
-<p style="font-size:10px;color:#777;margin:8px 0">Airtel: You will send later - I left placeholder</p>
-<p style="font-size:11px;margin:10px 0 6px;font-weight:700">Enter Transaction ID from SMS:</p>
-<input id="tid" class="inp" placeholder="e.g. 1234567890 from MoMo SMS">
-<button class="btn-verify" onclick="verifyPay()">✅ Verify & Download Now</button>
-<button onclick="closePay()" style="margin-top:8px;background:none;border:none;color:#64748b;font-size:11px">Cancel</button>
-<p style="font-size:9px;color:#94a3b8;margin-top:8px">Pay to 0777353793 • Instant • Mityana Study Hub</p>
+<a class="airtel" href="tel:*185*9%23">📱 Airtel Money → Pay 600/=</a>
+<p style="font-size:11px;margin:14px 0 6px;font-weight:600">After paying to 0777353793, enter Transaction ID:</p>
+<input id="tid" placeholder="e.g. 1234567890 from MoMo SMS" style="width:100%;padding:12px;border:1.5px solid #dbeafe;border-radius:10px;margin-bottom:12px;font-size:12px">
+<button onclick="verifyPay()" style="width:100%;padding:13px;background:linear-gradient(90deg,#1e3a8a,#10B981);color:white;border:none;border-radius:10px;font-weight:800;font-size:13px">✅ Verify & Download Now</button>
+<button onclick="closePay()" style="margin-top:12px;background:none;border:none;color:#64748b;font-size:12px">Cancel</button>
+<p style="font-size:10px;color:#94a3b8;margin-top:12px">Pay to 0777353793 • Instant • Mityana Study Hub</p>
 </div>
 </div>
 
-<div class="footer">Mityana Study Hub • CEO Daniel • MTN PAY TO 0777353793 (FIRST NUMBER) • Shs 600 EACH • SECOND: 0782779663 • © 2024</div>
+<div class="footer">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1100px;margin:0 auto">
+<div><b>Mityana Study Hub</b><br><span style="font-size:11px;opacity:0.8">Your trusted partner for primary & secondary learning in Uganda.</span><br><br><span style="font-size:10px">© 2024 Mityana Study Hub. All rights reserved.</span></div>
+<div><b>Quick Links</b><br><a href="#">About Us</a><br><a href="#">Subjects</a><br><a href="#">Past Papers</a><br><a href="#">Contact: 0777353793</a></div>
+<div><b>Follow Us</b><br>f X WhatsApp YouTube<br><br><b>Pay 600/= to 0777353793</b><br><span style="font-size:10px">MTN • 0777353793 • Instant</span></div>
+</div>
+</div>
 
 <script>
-let cur=0,sl=document.querySelectorAll('.slide'),dt=document.querySelectorAll('.dot');
-setInterval(()=>{sl[cur].classList.remove('on');dt[cur].classList.remove('on');cur=(cur+1)%sl.length;sl[cur].classList.add('on');dt[cur].classList.add('on')},3500);
+let cur=0;let slides=document.querySelectorAll('.slide');let dots=document.querySelectorAll('.dot');
+setInterval(()=>{slides[cur].classList.remove('on');dots[cur].classList.remove('on');cur=(cur+1)%slides.length;slides[cur].classList.add('on');dots[cur].classList.add('on')},3500);
 let currentLink='';
 function openPay(link){currentLink=link;document.getElementById('payModal').style.display='flex'}
 function closePay(){document.getElementById('payModal').style.display='none'}
 function verifyPay(){
 let tid=document.getElementById('tid').value.trim();
-if(tid.length<4){alert('Enter Transaction ID from MoMo SMS to 0777353793');return}
-alert('✅ Payment Verified to 0777353793! Downloading...');
+if(tid.length<5){alert('Please enter valid Transaction ID from your MoMo SMS to 0777353793');return}
+alert('✅ Payment Verified to 0777353793! Thank you!\nDownloading your Biology Mock now...\nMityana Study Hub');
 window.open(currentLink,'_blank');
 closePay();
 document.getElementById('tid').value='';
