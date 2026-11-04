@@ -3,107 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEO Dr Daniel - Information Centre</title>
+<title>CEO Dr Daniel - Register 2,500 Only</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#fff0f5;padding:10px;padding-bottom:80px}
-.header{background:#ff1744;color:white;padding:15px 10px;border-radius:15px;text-align:center;position:relative}
-.secret{position:absolute;top:5px;right:8px;width:40px;height:40px;opacity:0.01;cursor:pointer}
-.profile{background:white;border-radius:15px;padding:12px;margin:12px 0;display:flex;align-items:center;gap:12px}
-.profile img{width:70px;height:70px;border-radius:50%;border:3px solid #ff1744;object-fit:cover}
-.profile h2{font-size:18px;color:#ff1744}
-.profile p{font-size:12px;color:#555;line-height:1.4}
-.slideWrap{background:white;border-radius:15px;padding:12px;margin-bottom:12px}
-.slideWrap h3{color:#ff1744;font-size:15px;text-align:center;margin-bottom:8px}
-.slides{display:flex;gap:10px;overflow-x:auto;padding-bottom:5px}
-.book{min-width:130px;background:#fff8fa;border:2px solid #ffd1dc;border-radius:12px;padding:10px;text-align:center}
-.book .cover{font-size:35px}
-.book b{font-size:13px;display:block;margin:5px 0 2px}
-.book span{font-size:11px;color:#666}
-.searchBox{margin:12px 0}
-.searchBox input{width:100%;padding:14px;border:3px solid #ff1744;border-radius:30px;font-size:16px;outline:none;text-align:center}
-.status{background:white;border:2px solid #ff1744;border-radius:12px;padding:10px;text-align:center;font-weight:900;font-size:13px;margin-bottom:12px}
-.subject{background:white;border-radius:15px;padding:12px;margin-bottom:12px}
-.subject h2{color:#ff1744;font-size:18px;margin-bottom:8px}
-.paper{border:1px solid #ffd1dc;border-radius:10px;padding:10px;margin-bottom:8px;background:#fff8fa}
-.paper b{font-size:15px}
-.paper p{font-size:12px;color:#666;margin:3px 0 8px}
-.btn{border:none;padding:10px 14px;border-radius:20px;font-weight:900;cursor:pointer;font-size:13px;margin:2px}
-.btn-green{background:#00e676;color:#000}
-.btn-pink{background:#ff1744;color:white}
-.btn-blue{background:#2979ff;color:white}
-.btn-orange{background:#ff9100;color:white;width:100%}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:999;overflow:auto;padding:15px}
-.ceoBox{background:white;border-radius:15px;padding:18px;max-width:420px;margin:30px auto}
-.ceoBox input{width:100%;padding:13px;border:2px solid #ff1744;border-radius:10px;margin:10px 0;font-size:16px;text-align:center}
-.ceoBox textarea{width:100%;padding:10px;border:2px solid #ddd;border-radius:10px;margin:6px 0;min-height:100px}
-.ceoBox select{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;margin:6px 0}
-.readerBox{background:white;border-radius:15px;padding:15px;max-width:520px;margin:15px auto;min-height:80vh}
-.readerContent{background:#fffde7;border:2px solid #ffca28;border-radius:12px;padding:15px;height:420px;overflow-y:auto;font-size:15px;line-height:1.7;white-space:pre-wrap}
-.payBox{background:#fffde7;border:2px solid #ffca28;border-radius:12px;padding:12px;margin:10px 0;text-align:left;font-size:13px;line-height:1.6}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff5f5;color:#222}
+header{background:#b30000;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+header h1{font-size:23px}
+header p{font-size:13px}
+.top{display:flex;gap:10px;padding:12px;max-width:1100px;margin:auto;align-items:center;background:#fff;border-bottom:3px solid gold}
+.top img{width:90px;height:90px;object-fit:cover;border-radius:50%;border:3px solid gold}
+.top h2{font-size:20px;color:#b30000}
+.top p{font-size:13px}
+.btn{display:inline-block;background:#b30000;color:#fff;padding:9px 14px;border-radius:20px;font-weight:bold;text-decoration:none;font-size:13px;margin:3px;border:none;cursor:pointer}
+.btn-gold{background:gold;color:#000}
+.btn-green{background:#00a651;color:#fff}
+.btn-dark{background:#000;color:#fff}
+.main{max-width:1100px;margin:auto;padding:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.box{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.box h3{color:#b30000;font-size:17px;margin-bottom:8px;text-align:center}
+.box img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+.box p{font-size:13px;margin:6px 0}
+.price{color:#b30000;font-weight:bold;font-size:16px}
+input,select,textarea{width:100%;padding:9px;margin:5px 0;border:1px solid #ccc;border-radius:7px;font-size:13px}
+.pay{border:2px solid #b30000;border-radius:8px;padding:8px;margin:5px 0;font-size:13px;text-align:center;background:#fff5f5}
+.share-btn{display:block;text-align:center;padding:10px;margin:5px 0;border-radius:10px;color:#fff;font-weight:bold;text-decoration:none;font-size:13px}
+.wa{background:#25D366}.fb{background:#1877F2}.tw{background:#000}.ig{background:#E1306C}
+.locked{opacity:.5;pointer-events:none}
+footer{background:#000;color:#fff;text-align:center;padding:12px;font-size:13px}
+@media(max-width:750px){.main{grid-template-columns:1fr}.top{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 
-<div class="header"><div class="secret" onclick="openCodeModal()">.</div><h1>👨‍⚕️ CEO Dr Daniel</h1><p>INFORMATION CENTRE • ONE PAGE • SEE • DOWNLOAD • READ</p></div>
+<header>
+  <h1>👑 CEO Dr Daniel</h1>
+  <p>Never plan to kill a dream ✨ | Doctor • Teacher • CEO • Motivator | Kampala, Uganda</p>
+</header>
 
-<div class="profile"><img src="https://via.placeholder.com/70/ff1744/ffffff?text=DR" alt="CEO"><div><h2>CEO Dr Daniel</h2><p>👨‍⚕️ Founder & CEO - Information Centre<br>📚 Biology • Physics • Maths • Virus • Chemistry<br>📍 Uganda • Doctrine Code Protected</p></div></div>
+<div class="top">
+  <img src="profile.jpg" alt="CEO Dr Daniel">
+  <div>
+    <h2>CEO Dr Daniel - Welcome!</h2>
+    <p><b>KEY INFORMATION:</b> Pay ONLY <b>UGX 2,500</b> for Registration. After you Register, <b>DOWNLOAD EVERYTHING FOR FREE!</b> No other payment!</p>
+    <a class="btn btn-gold" href="#books">📚 Books</a>
+    <a class="btn" href="#students">🎓 Students</a>
+    <a class="btn btn-green" href="#download">📥 2 FREE Files</a>
+    <a class="btn" href="#register">📝 Register 2,500</a>
+    <a class="btn btn-dark" href="#share">🔗 Share & Unlock</a>
+  </div>
+</div>
 
-<div class="slideWrap"><h3>📚 SLIDE - OUR BOOKS - SWIPE ➡️</h3><div class="slides" id="bookSlide">
-<div class="book"><div class="cover">📗</div><b>Biology Paper 1</b><span>Cells • Life</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Biology')">OPEN</button></div>
-<div class="book"><div class="cover">📘</div><b>Physics Paper 1</b><span>Motion • Force</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Physics')">OPEN</button></div>
-<div class="book"><div class="cover">📙</div><b>Maths Paper 1</b><span>Numbers</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Maths')">OPEN</button></div>
-<div class="book"><div class="cover">🦠</div><b>Virus Book</b><span>What You Must Know</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Virus')">OPEN</button></div>
-<div class="book"><div class="cover">🧪</div><b>Chemistry</b><span>Elements</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Chemistry')">OPEN</button></div>
-</div></div>
+<div class="main">
 
-<div class="searchBox"><input type="text" id="searchInput" oninput="doSearch()" placeholder="🔍 SEARCH HERE... Physics, Biology, Maths, Virus"></div>
-<div class="status" id="statusBox">🎁 FREE DOWNLOADS LEFT: 2</div>
-<div style="text-align:center;margin-bottom:12px"><button class="btn btn-blue" onclick="shareToUnlock()">📤 SHARE TO 5 GROUPS = +2 FREE DOWNLOADS</button></div>
-<div id="allPapers"></div>
+  <!-- BOOKS + KEY INFO -->
+  <div class="box" id="books">
+    <h3>📚 MY BOOKS - KEY INFO</h3>
+    <img src="book1.jpg">
+    <p><b>1. Never Kill A Dream</b> - Motivation</p>
+    <p><b>2. Doctor's Guide</b> - Medicine Made Simple</p>
+    <p><b>3. CEO Mindset</b> - How To Become A Leader</p>
+    <p><b>4. Study Notes + Success Guide</b></p>
+    <p style="background:gold;padding:8px;border-radius:8px;text-align:center"><b>ALL FREE AFTER REGISTRATION!</b><br>Pay Only 2,500 Once</p>
+    <p>✅ No payment for books<br>✅ No payment for notes<br>✅ Only 2,500 Registration</p>
+  </div>
 
-<div id="readerModal" class="modal"><div class="readerBox"><h3 id="readerTitle" style="text-align:center;color:#ff1744">Title</h3><p style="text-align:center;font-size:12px">ROLL UP / ROLL DOWN TO READ</p><div style="display:flex;gap:8px;margin:10px 0"><button class="btn btn-pink" style="flex:1" onclick="rollUp()">⬆️ ROLL UP</button><button class="btn btn-green" style="flex:1" onclick="rollDown()">⬇️ ROLL DOWN</button></div><div class="readerContent" id="readerContent"></div><button class="btn btn-orange" onclick="closeReader()">❌ CLOSE READER</button></div></div>
+  <!-- STUDENTS -->
+  <div class="box" id="students">
+    <h3>🎓 MY STUDENTS</h3>
+    <img src="students.jpg">
+    <p>✅ Join 1000+ Students Learning With Dr Daniel</p>
+    <p>✅ Future Doctors & CEOs</p>
+    <p>✅ Class 2026 - Now Open!</p>
+    <p><b>How It Works:</b><br>1. Register - Pay 2,500<br>2. Get Access<br>3. Download Everything Free</p>
+    <a class="btn btn-gold" href="#register">Join Us Now - 2,500 Only</a>
+  </div>
 
-<div id="payModal" class="modal"><div class="ceoBox" style="text-align:center"><h3 style="color:#ff1744">💰 PAY 2,500 TO CONTINUE</h3><p style="font-size:13px;margin:8px 0">Your FREE downloads are finished.<br>Pay <b>2,500 UGX</b> once to DOWNLOAD FREELY FOREVER.</p><div class="payBox"><b>✅ PAYMENT METHODS:</b><br>1. <b>MTN MoMo:</b> 0782 - CEO Dr Daniel<br>2. <b>Airtel Money:</b> 0782 - CEO Dr Daniel<br><br>Send 2,500 then tap PAID.</div><button class="btn btn-green" onclick="paidNow()">✅ I HAVE PAID - DOWNLOAD NOW</button><br><br><button class="btn btn-pink" onclick="closePay()">❌ CANCEL</button></div></div>
+  <!-- REGISTER + PAYMENT -->
+  <div class="box" id="register">
+    <h3>📝 REGISTER - ONLY UGX 2,500</h3>
+    <p style="text-align:center"><span class="price">UGX 2,500 ONLY</span><br>One Time Payment - Then All FREE!</p>
+    <form onsubmit="showAllFree();return false;">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone / WhatsApp" required>
+      <select><option>What do you want?</option><option>Join Students Class</option><option>Download All Books Free</option><option>Free Download Only</option></select>
+      <div class="pay">📱 <b>MTN MoMo:</b> 07XX XXX XXX - Dr Daniel<br>Send <b>2,500</b></div>
+      <div class="pay">📱 <b>Airtel Money:</b> 07XX XXX XXX - Dr Daniel<br>Send <b>2,500</b></div>
+      <div class="pay">🏦 <b>Bank:</b> XXXXXXXXXX</div>
+      <input type="text" placeholder="Transaction ID / Reference (2,500 Paid)" required>
+      <button class="btn btn-green" style="width:100%">✅ I PAID 2,500 - UNLOCK ALL FREE</button>
+    </form>
+    <div id="allFree" style="display:none;background:#e8ffe8;padding:10px;border-radius:8px;text-align:center;margin-top:8px">
+      <b>🎉 CONGRATULATIONS!</b><br>You Registered! Now Download EVERYTHING FREE Below 👇
+    </div>
+  </div>
 
-<div id="codeModal" class="modal"><div class="ceoBox"><h3 style="text-align:center;color:#ff1744">🔒 CEO - ENTER DOCTRINE CODE</h3><input type="password" id="ceoCodeInput" placeholder="🔑 Enter Doctrine Code"><button class="btn btn-green" style="width:100%" onclick="checkCEOCode()">✅ UNLOCK UPLOAD CENTRE</button><button class="btn btn-pink" style="width:100%;margin-top:6px" onclick="closeCode()">❌ CANCEL</button><p id="codeError" style="text-align:center;color:#ff1744;font-weight:900;display:none;margin-top:8px">❌ WRONG DOCTRINE CODE!</p></div></div>
+  <!-- FREE DOWNLOAD FOR EVERYONE - 2 FILES -->
+  <div class="box" id="download">
+    <h3>📥 2 FILES FREE FOR EVERYONE</h3>
+    <p>No Payment Needed - For Everyone!</p>
+    <p>✅ <b>File 1:</b> Never Kill A Dream - Sample</p>
+    <a class="btn btn-green" href="free-book.pdf" download>📥 DOWNLOAD FILE 1 FREE</a>
+    <p>✅ <b>File 2:</b> Motivation Notes</p>
+    <a class="btn btn-green" href="free-notes.pdf" download>📥 DOWNLOAD FILE 2 FREE</a>
+    <p style="margin-top:8px">Want ALL Files? Register for 2,500 above OR Share to 5 Groups below!</p>
+  </div>
 
-<div id="uploadModal" class="modal"><div class="ceoBox"><h3 style="text-align:center;color:#00c853">✅ UPLOAD CENTRE UNLOCKED</h3><select id="upSubject"><option>Biology</option><option>Physics</option><option>Maths</option><option>Chemistry</option><option>Virus</option><option>General</option></select><input type="text" id="upTitle" placeholder="Title e.g. Physics Paper 1 - Motion"><textarea id="upContent" placeholder="Paste SHORT information here... Keep it short, not overput."></textarea><button class="btn btn-green" style="width:100%" onclick="savePaper()">💾 SAVE PAPER</button><button class="btn btn-pink" style="width:100%;margin-top:6px" onclick="closeUpload()">❌ CLOSE</button></div></div>
+  <!-- SHARE & UNLOCK -->
+  <div class="box" id="share">
+    <h3>🔗 SHARE & UNLOCK 2 MORE FREE</h3>
+    <p><b>Share this website to 5 Groups</b> on WhatsApp, Facebook, Twitter, Instagram — Then Download 2 More Files FREE!</p>
+    <p id="shareCount" style="text-align:center;font-weight:bold;color:#b30000">Shares: 0 / 5 Groups</p>
+    <a class="share-btn wa" href="https://wa.me/?text=Join%20CEO%20Dr%20Daniel%20-%20Register%202500%20Only%20Then%20Download%20Everything%20FREE!%20Never%20plan%20to%20kill%20a%20dream%20✨%20https://yourwebsite.com" target="_blank" onclick="addShare()">📱 Share on WhatsApp</a>
+    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" onclick="addShare()">📘 Share on Facebook</a>
+    <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=CEO%20Dr%20Daniel%20-%20Register%202500%20Only%20Then%20Download%20Everything%20FREE!%20Never%20plan%20to%20kill%20a%20dream&url=https://yourwebsite.com" target="_blank" onclick="addShare()">𝕏 Share on Twitter / X</a>
+    <a class="share-btn ig" href="https://www.instagram.com/" target="_blank" onclick="addShare()">📸 Share on Instagram</a>
+    <button class="btn" style="width:100%" onclick="addShare()">✅ I Shared To A Group - Click +1</button>
+    <div id="unlockFiles" class="locked" style="margin-top:10px;text-align:center;border-top:1px dashed #ccc;padding-top:10px">
+      <p><b>🔒 Locked Files - Share to 5 Groups to Unlock</b></p>
+      <a class="btn btn-gold" href="bonus-book.pdf" download>📥 BONUS FILE 3 FREE</a>
+      <a class="btn btn-gold" href="bonus-notes.pdf" download>📥 BONUS FILE 4 FREE</a>
+    </div>
+  </div>
+
+  <!-- ALL FILES AFTER REGISTRATION -->
+  <div class="box" id="allFiles">
+    <h3>📚 ALL FILES - AFTER REGISTRATION</h3>
+    <p>These unlock after you Register (2,500) OR Share to 5 Groups:</p>
+    <p>📕 Never Kill A Dream - Full Book</p>
+    <p>📗 Doctor's Guide - Full</p>
+    <p>📘 CEO Mindset - Full</p>
+    <p>📙 Study Notes + Exam Guide</p>
+    <p style="text-align:center"><b>Register 2,500 = ALL FREE!</b></p>
+    <a class="btn btn-green" href="#register" style="width:100%;text-align:center">REGISTER NOW - 2,500</a>
+  </div>
+
+</div>
+
+<footer>
+  <b>👑 CEO Dr Daniel</b> | Never plan to kill a dream ✨ | Pay Only 2,500 Registration - Then Everything FREE | © 2026 - Kampala, Uganda<br>
+  Share: <a style="color:gold" href="https://wa.me/?text=Check%20CEO%20Dr%20Daniel">WhatsApp</a> | <a style="color:gold" href="https://facebook.com">Facebook</a> | <a style="color:gold" href="https://twitter.com">Twitter</a> | <a style="color:gold" href="https://instagram.com">Instagram</a>
+</footer>
 
 <script>
-let CEO_CODE = "0782";
-let defaultPapers = [
-{subject:"Biology", title:"Biology Paper 1 - Cells", content:"BIOLOGY - CELLS\n\n1. Cell = smallest unit of life.\n2. Nucleus = controls cell.\n3. Mitochondria = gives energy.\n4. Plant has cell wall. Animal has no cell wall.\n\nEND - Dr Daniel"},
-{subject:"Physics", title:"Physics Paper 1 - Motion", content:"PHYSICS - MOTION\n\n1. Speed = Distance / Time\n2. Force = Mass x Acceleration\n3. Example: 100m in 10s = 10 m/s\n\nEND - Dr Daniel"},
-{subject:"Maths", title:"Maths Paper 1 - Numbers", content:"MATHS - NUMBERS\n\n1. 12 + 8 = 20\n2. 25 - 7 = 18\n3. 6 x 7 = 42\n4. 100 / 4 = 25\n\nEND - Dr Daniel"},
-{subject:"Virus", title:"Virus - What You Must Know", content:"VIRUS\n\n1. Very small, needs host.\n2. Examples: Flu, Corona, HIV\n3. Prevention: Wash hands, vaccinate.\n\nEND - Dr Daniel"}
-];
-let papers = JSON.parse(localStorage.getItem("dr_papers") || "null") || defaultPapers;
-let freeDownloads = parseInt(localStorage.getItem("dr_free_dl") || "2");
-let hasPaid = localStorage.getItem("dr_paid") === "yes";
-let sharedDone = localStorage.getItem("dr_shared") === "yes";
-let pendingDownload = null;
-function saveAll(){ localStorage.setItem("dr_papers", JSON.stringify(papers)); localStorage.setItem("dr_free_dl", freeDownloads); }
-function updateStatus(){ if(hasPaid){ document.getElementById("statusBox").innerHTML = "✅ PAID 2,500 • DOWNLOAD FREELY FOREVER ♾️"; } else { document.getElementById("statusBox").innerHTML = "🎁 FREE DOWNLOADS LEFT: " + freeDownloads + (sharedDone ? " | ✅ SHARE BONUS USED" : " | SHARE TO 5 GROUPS = +2 FREE"); } }
-function renderPapers(filter){ let html=""; let groups={}; papers.forEach((p,i)=>{ if(!groups[p.subject]) groups[p.subject]=[]; groups[p.subject].push({p:p,idx:i}); }); for(let subj in groups){ let cards=""; groups[subj].forEach(obj=>{ if(filter && !((obj.p.title+" "+obj.p.subject+" "+obj.p.content).toLowerCase().includes(filter.toLowerCase()))) return; cards+=`<div class="paper"><b>${obj.p.title}</b><p>${obj.p.subject} • Tap DOWNLOAD on this file</p><button class="btn btn-green" onclick="tryDownload(${obj.idx})">⬇️ DOWNLOAD</button> <button class="btn btn-blue" onclick="openReader(${obj.idx})">👀 SEE</button></div>`; }); if(cards) html+=`<div class="subject"><h2>📚 ${subj}</h2>${cards}</div>`; } if(!html) html=`<div style="text-align:center;padding:20px;background:white;border-radius:12px">No result. Try Physics, Biology, Maths...</div>`; document.getElementById("allPapers").innerHTML=html; }
-function doSearch(){ renderPapers(document.getElementById("searchInput").value); }
-function searchFor(word){ document.getElementById("searchInput").value=word; renderPapers(word); document.getElementById("allPapers").scrollIntoView({behavior:"smooth"}); }
-function tryDownload(idx){ if(hasPaid){ doDownload(idx); return; } if(freeDownloads>0){ freeDownloads--; saveAll(); updateStatus(); doDownload(idx); } else { pendingDownload=idx; document.getElementById("payModal").style.display="block"; } }
-function doDownload(idx){ let paper=papers[idx]; let blob=new Blob([paper.title+"\n\n"+paper.content+"\n\n- CEO Dr Daniel"],{type:"text/plain"}); let a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=paper.title.replace(/[^a-z0-9]/gi,'_')+".txt"; a.click(); URL.revokeObjectURL(a.href); openReader(idx); }
-function openReader(idx){ document.getElementById("readerTitle").innerText=papers[idx].title; document.getElementById("readerContent").innerText=papers[idx].content; document.getElementById("readerContent").scrollTop=0; document.getElementById("readerModal").style.display="block"; }
-function closeReader(){ document.getElementById("readerModal").style.display="none"; }
-function rollUp(){ document.getElementById("readerContent").scrollTop-=200; }
-function rollDown(){ document.getElementById("readerContent").scrollTop+=200; }
-function closePay(){ document.getElementById("payModal").style.display="none"; }
-function paidNow(){ document.getElementById("payModal").style.display="none"; hasPaid=true; localStorage.setItem("dr_paid","yes"); updateStatus(); alert("✅ PAID! Now you can DOWNLOAD FREELY FOREVER!"); if(pendingDownload!==null){ doDownload(pendingDownload); pendingDownload=null; } }
-function shareToUnlock(){ if(sharedDone){ alert("You already used Share Bonus!"); return; } let text=encodeURIComponent("Check CEO Dr Daniel Information Centre! 2 FREE Downloads!"); window.open("https://wa.me/?text="+text,"_blank"); setTimeout(()=>{ if(confirm("Did you SHARE to 5 Groups? Instagram / Facebook / Twitter / WhatsApp? Tap OK to get +2 FREE DOWNLOADS.")){ freeDownloads+=2; sharedDone=true; localStorage.setItem("dr_shared","yes"); saveAll(); updateStatus(); alert("✅ +2 FREE DOWNLOADS ADDED! Now you have "+freeDownloads); } },800); }
-function openCodeModal(){ document.getElementById("codeModal").style.display="block"; document.getElementById("codeError").style.display="none"; document.getElementById("ceoCodeInput").value=""; }
-function closeCode(){ document.getElementById("codeModal").style.display="none"; }
-function checkCEOCode(){ let v=document.getElementById("ceoCodeInput").value.trim(); if(v===CEO_CODE){ document.getElementById("codeModal").style.display="none"; document.getElementById("uploadModal").style.display="block"; } else { document.getElementById("codeError").style.display="block"; } }
-function closeUpload(){ document.getElementById("uploadModal").style.display="none"; }
-function savePaper(){ let s=document.getElementById("upSubject").value; let t=document.getElementById("upTitle").value.trim(); let c=document.getElementById("upContent").value.trim(); if(!t||!c){ alert("Fill Title and Content CEO!"); return; } papers.unshift({subject:s,title:t,content:c}); saveAll(); document.getElementById("searchInput").value=""; closeUpload(); renderPapers(""); updateStatus(); alert("✅ SAVED! '"+t+"' is now LIVE at TOP of "+s); window.scrollTo(0,0); }
-updateStatus(); renderPapers("");
-setInterval(()=>{ let el=document.getElementById("bookSlide"); if(el){ el.scrollLeft+=140; if(el.scrollLeft+el.clientWidth>=el.scrollWidth) el.scrollLeft=0; } },2500);
+let shares=0;
+function addShare(){
+  shares++;
+  document.getElementById('shareCount').innerText = 'Shares: '+shares+' / 5 Groups';
+  if(shares>=5){
+    document.getElementById('unlockFiles').classList.remove('locked');
+    document.getElementById('unlockFiles').innerHTML='<b>🎉 UNLOCKED!</b><br>You Shared To 5 Groups! Download 2 Files FREE!<br><a class=\"btn btn-green\" href=\"bonus-book.pdf\" download>📥 BONUS FILE 3 FREE</a><br><a class=\"btn btn-green\" href=\"bonus-notes.pdf\" download>📥 BONUS FILE 4 FREE</a>';
+    alert('Congratulations! You shared to 5 groups! 2 Bonus Files Unlocked FREE!');
+  } else {
+    alert('Thank you for sharing! '+shares+'/5 Groups. Share to '+(5-shares)+' more groups to unlock 2 FREE files!');
+  }
+}
+function showAllFree(){
+  document.getElementById('allFree').style.display='block';
+  document.getElementById('allFree').scrollIntoView();
+  alert('Thank you '+document.getElementById('name').value+'! Registration Received. Now Download EVERYTHING FREE!');
+}
 </script>
 </body>
   </html>
