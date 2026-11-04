@@ -3,102 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mityana Study Hub - Pay 2500 Once, Download FREE</title>
+<title>Mityana Study Hub - Learn Smarter, Pass with Confidence</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,sans-serif}
-body{background:#f8fbff;color:#1e293b}
-.top{max-width:1200px;margin:14px auto;background:white;border-radius:16px;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);position:sticky;top:10px;z-index:99}
-.logo{font-weight:800;color:#1e3a8a;font-size:18px}.logo i{background:#facc15;padding:4px 8px;border-radius:8px}
-.menu{display:flex;gap:14px;font-size:11px;font-weight:600}.menu a{text-decoration:none;color:#475569}
-.join{background:#facc15;color:#000;padding:6px 14px;border-radius:20px;text-decoration:none;font-weight:800}
-.hero{max-width:1200px;margin:16px auto;background:linear-gradient(135deg,#dbeafe 0%,#fef3c7 40%,#dbeafe 100%);border-radius:20px;padding:18px;display:flex;flex-wrap:wrap;gap:18px}
-.hero-left{flex:1.1;min-width:320px}.hero-left h1{font-size:32px;color:#1e3a8a;font-weight:900;line-height:1.05}
-.hero-left p{font-size:12px;color:#475569;margin:10px 0;line-height:1.5}
-.btn-pay{background:#ffcc00;color:#000;padding:12px 20px;border-radius:30px;font-weight:900;font-size:14px;text-decoration:none;display:inline-block;text-align:center;border:2px solid #000}
-.btn-wa{background:#25D366;color:#fff;padding:10px 18px;border-radius:30px;font-weight:800;font-size:12px;text-decoration:none;display:inline-block;margin-top:8px}
-.btn-free{background:white;border:1.5px solid #1e3a8a;color:#1e3a8a;padding:8px 16px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none;display:inline-block;margin-top:8px}
-.stats{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#475569;margin-top:10px}
-.hero-right{flex:0.9;min-width:340px}
-.pay-box{background:#fff;border:2px solid #ffcc00;border-radius:16px;padding:16px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
-.pay-box h3{font-size:18px}
-.pay-box p{font-size:12px;margin:8px 0}
-.subjects{max-width:1200px;margin:18px auto;background:white;border-radius:20px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
-.sub-title{text-align:center;font-weight:800;color:#1e3a8a;font-size:18px}.sub-sub{text-align:center;font-size:11px;color:#64748b;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.card{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px;cursor:pointer}
-.card b{font-size:12px;color:#1e3a8a;display:block}.card span{font-size:10px;color:#64748b}
-.card-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:300;align-items:center;justify-content:center;padding:16px}
-.modal-box{background:white;border-radius:16px;padding:20px;max-width:520px;width:100%;max-height:85vh;overflow-y:auto}
-.bio-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;gap:8px}
-.free-btn{background:#10B981;color:#fff;padding:8px 14px;border-radius:20px;font-weight:800;font-size:11px;border:none;cursor:pointer}
-.footer{max-width:1200px;margin:20px auto;background:#1e3a8a;color:white;border-radius:20px 20px 0 0;padding:20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;font-size:11px}
-@media(max-width:768px){.top .menu{display:none}.footer{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:#f8fafc}
+.topbar{background:white;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100}
+.logo{font-weight:800;color:#1e3a8a;font-size:20px}
+.btn-join{background:#facc15;padding:8px 16px;border-radius:20px;color:#000!important;text-decoration:none;font-weight:700;font-size:12px}
+.hero{background:linear-gradient(120deg,#dbeafe 0%,#fef3c7 100%);padding:25px 20px;max-width:1100px;margin:0 auto;border-radius:0 0 20px 20px}
+.hero-text h1{font-size:28px;color:#1e3a8a;line-height:1.2;font-weight:800}
+.hero-text p{font-size:13px;color:#475569;margin:10px 0;line-height:1.5}
+/* SLIDESHOW - RETURNED */
+.slideshow{position:relative;height:230px;border-radius:14px;overflow:hidden;margin:16px 0;background:#111}
+.slide{position:absolute;inset:0;opacity:0;transition:1s;display:flex;align-items:flex-end;padding:16px;background-size:cover;background-position:center}
+.slide.on{opacity:1}
+.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.8) 0%,transparent 60%)}
+.slide-content{position:relative;z-index:2;color:#fff}
+.slide-content b{font-size:17px;display:block}
+.slide-content p{font-size:12px;opacity:0.9}
+.ph{background:#facc15;color:#000;padding:6px 12px;border-radius:20px;font-weight:900;font-size:11px;display:inline-block;margin-top:7px}
+.dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.5)}
+.dot.on{background:#facc15}
+.section{padding:20px;max-width:1100px;margin:0 auto}
+.section h2{text-align:center;color:#1e3a8a;font-size:20px}
+.sub{text-align:center;font-size:12px;color:#64748b;margin:6px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.sub-card{background:white;padding:12px;border-radius:12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.04);border:1px solid #e2e8f0}
+.sub-card .icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.icon-yellow{background:#fef3c7}.icon-blue{background:#dbeafe}.icon-green{background:#dcfce7}
+.sub-card b{font-size:12px;color:#1e293b}.sub-card span{font-size:10px;color:#64748b;display:block}
+.past{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.past-box{background:#1e3a8a;color:white;padding:20px;border-radius:14px}
+.past-box a{background:#facc15;color:#000;padding:8px 14px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;display:inline-block}
+.bio-list{background:white;border-radius:15px;padding:18px;box-shadow:0 5px 20px rgba(0,0,0,0.06);margin:20px 0;border:2px solid #1e3a8a}
+.bio-item{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #f1f5f9;gap:10px}
+.pay-btn{background:linear-gradient(90deg,#1e3a8a,#10B981);color:white;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:11px;border:none;cursor:pointer}
+.pay-big{background:#facc15;color:#000;padding:12px 22px;border-radius:25px;font-weight:800;font-size:14px;border:none;cursor:pointer;display:block;margin:12px auto;text-align:center;width:fit-content}
+.ceo-btn{background:#111;color:#facc15;padding:14px 22px;border-radius:12px;font-weight:800;font-size:15px;border:2px solid #facc15;cursor:pointer;display:block;margin:20px auto;width:90%;max-width:400px;text-align:center}
+.ceo-panel{display:none;background:white;border:2px solid #1e3a8a;border-radius:16px;padding:20px;margin:20px auto;max-width:500px}
+.ceo-panel input,.ceo-panel select{width:100%;padding:12px;border:1.5px solid #dbeafe;border-radius:10px;margin:8px 0;font-size:13px}
+.ceo-panel button{width:100%;padding:13px;border:none;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}
+.footer{background:#1e3a8a;color:white;padding:28px 20px;margin-top:30px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:300;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:white;border-radius:16px;padding:22px;max-width:400px;width:100%;text-align:center}
+@media(max-width:700px){.past{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div class="top"><div class="logo"><i>📚</i> Mityana Study Hub</div><div class="menu"><a href="#">Home</a><a href="#subjects">Subjects</a><a href="#past">Past Papers</a><a class="join" href="#pay">Join - 2,500 ONCE</a></div></div>
+<div class="topbar"><div class="logo">📚 Mityana Study Hub</div><a class="btn-join" href="#biology">Join Free</a></div>
 
 <div class="hero">
-<div class="hero-left">
-<h1>Learn Smarter.<br>Pass with Confidence.</h1>
-<p>Free lessons, notes & past papers for P1-P7 & S1-S6 Ugandan National Curriculum. <b>CEO Dr Daniel - "Never plan to kill a dream" - Mityana, Uganda.</b><br><br>
-<b>Pay Registration 2,500 ONCE → Download Everything FREE.</b> No per-paper payment.</p>
-<a class="btn-pay" href="https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84" target="_blank">💰 PAY REGISTRATION 2,500 — TAP TO PAY (Pesapal)</a><br>
-<a class="btn-wa" href="https://wa.me/256782779663?text=Hi%20I%20paid%20Registration%202500%20via%20Pesapal%20for%20Mityana%20Study%20Hub.%20Please%20activate%20me%20for%20FREE%20downloads">✅ I PAID — SEND SCREENSHOT ON WHATSAPP</a><br>
-<a class="btn-free" href="#subjects">Browse Subjects Free ↓</a>
-<div class="stats"><div>👤 10,000+ Learners</div><div>📄 1,000+ Past Papers</div><div>✅ 100% UNEB-Aligned</div><div>🧬 Biology 7 in 1</div></div>
-</div>
+<div class="hero-text"><h1>Learn Smarter.<br>Pass with Confidence.</h1><p>Free lessons, notes & past papers for P1-P7 & S1-S6 following Ugandan National Curriculum. Pay 2,500 ONCE for Registration → Download FREE.</p></div>
 
-<div class="hero-right">
-<div id="pay" class="pay-box">
-<h3>📚 JOIN NOW</h3>
-<p><b>Pay <span style="background:#ffcc00;padding:2px 8px;border-radius:10px;">2,500 ONCE</span></b></p>
-<p>MTN MoMo / Airtel / Card via Pesapal<br>To: <b>0782779663</b><br>After paying, send screenshot → We activate you → Download FREE</p>
-<a class="btn-pay" style="width:100%;display:block;" href="https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84" target="_blank">💰 PAY 2,500 NOW - PESAPAL LINK</a>
-<p style="font-size:11px;color:#777;">OR Pay direct MTN:</p>
-<a href="tel:*165*3*0782779663*2500%23" style="background:#000;color:#ffcc00;padding:10px 16px;border-radius:30px;font-weight:800;display:block;text-decoration:none;">📱 TAP TO PAY MTN *165*3*0782779663*2500#</a>
-<a class="btn-wa" style="width:100%;display:block;text-align:center;" href="https://wa.me/256782779663?text=Hi%20I%20paid%20Registration%202500%20for%20Mityana%20Study%20Hub">✅ I PAID — WHATSAPP 0782779663</a>
-</div>
+<!-- SLIDESHOW -->
+<div class="slideshow">
+<div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800')"><div class="slide-content"><b>📚 Mityana Study Hub</b><p>Provide all resources aiming at excellence</p><div class="ph">📞 0777353793 / 0782779663</div></div></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800')"><div class="slide-content"><b>💰 Pay 2,500 ONCE</b><p>Via Pesapal → Download All FREE</p><div class="ph">Pay 2,500 to Unlock All</div></div></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800')"><div class="slide-content"><b>🧬 Biology 7 IN 1</b><p>S1-S6 • 7 Mocks LIVE - Scenario Based</p><div class="ph">🧬 Browse Biology 7 in 1 →</div></div></div>
+<div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
 </div>
 </div>
 
-<div id="subjects" class="subjects"><div class="sub-title">Explore Subjects by Level</div><div class="sub-sub">P1-P7 & S1-S6 — Ugandan Curriculum • Pay 2,500 ONCE → All FREE • Click Biology to see 7 books</div><div class="grid">
-<div class="card"><div class="card-icon" style="background:#fef3c7">📐</div><div><b>Mathematics</b><span>P1-P7 • S1-S6</span></div></div>
-<div class="card"><div class="card-icon" style="background:#dbeafe">📘</div><div><b>English</b><span>P1-P7 • S1-S4</span></div></div>
-<div class="card"><div class="card-icon" style="background:#fef3c7">🧪</div><div><b>Science</b><span>P1-P7 • S1-S4</span></div></div>
-<div class="card"><div class="card-icon" style="background:#dbeafe">🌍</div><div><b>Geography</b><span>S1-S6</span></div></div>
-<div class="card"><div class="card-icon" style="background:#fef3c7">⚛️</div><div><b>Physics</b><span>S1-S6</span></div></div>
-<div class="card"><div class="card-icon" style="background:#fef3c7">🧫</div><div><b>Chemistry</b><span>S1-S6</span></div></div>
-<div class="card" onclick="openBiology()" style="border:2px solid #10B981;background:#f0fdf4"><div class="card-icon" style="background:#bbf7d0">🧬</div><div><b>Biology ⭐ 7 IN 1</b><span>S1-S6 • Pay 2500 ONCE = All FREE</span></div></div>
-<div class="card"><div class="card-icon" style="background:#fef3c7">✒️</div><div><b>Literature</b><span>S1-S6</span></div></div>
-</div></div>
-
-<div id="past" class="subjects" style="background:#fffaf0"><div class="sub-title">Past Papers — Practice</div><div class="sub-sub">PLE, UCE, UACE • Pay 2,500 ONCE for Registration → Download FREE</div>
-<div style="text-align:center;padding:12px;"><button onclick="openBiology()" style="background:#facc15;border:none;padding:10px 20px;border-radius:20px;font-weight:800;cursor:pointer;">Browse Biology 7 in 1 →</button> <a href="https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84" target="_blank" style="background:#ffcc00;color:#000;padding:10px 20px;border-radius:20px;font-weight:800;text-decoration:none;display:inline-block;">💰 Pay 2,500 to Unlock All</a></div>
+<div class="section">
+<h2>Explore Subjects by Level</h2><p class="sub">Primary (P1-P7) & Secondary (S1-S6)</p>
+<div class="grid">
+<div class="sub-card"><div class="icon icon-yellow">🧮</div><div><b>Mathematics</b><span>P1-P7 • S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">📘</div><div><b>English</b><span>P1-P7 • S1-S4</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">🧪</div><div><b>Science</b><span>P1-P7 • S1-S4</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">🌍</div><div><b>Geography</b><span>S1-S6</span></div></div>
+<div class="sub-card" style="border:2px solid #1e3a8a;background:#eff6ff"><div class="icon icon-green">🧬</div><div><b>Biology ⭐ 7 IN 1</b><span>S1-S6 • Pay 2500 ONCE = All FREE</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">✒️</div><div><b>Literature</b><span>S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-blue">⚛️</div><div><b>Physics</b><span>S1-S6</span></div></div>
+<div class="sub-card"><div class="icon icon-yellow">🧫</div><div><b>Chemistry</b><span>S1-S6</span></div></div>
 </div>
 
-<div id="bioModal" class="modal"><div class="modal-box">
-<h3 style="color:#1e3a8a;text-align:center">🧬 BIOLOGY - 7 BOOKS COMPILED<br><span style="font-size:11px;color:#10B981">Pay Registration 2,500 ONCE via Pesapal → All 7 FREE</span></h3>
-<p style="font-size:11px;text-align:center;margin:8px 0">1. Pay 2,500 via Pesapal link below<br>2. Send screenshot on WhatsApp 0782779663<br>3. We activate you → Download ALL FREE</p>
-<div style="text-align:center;margin:10px 0;"><a href="https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84" target="_blank" style="background:#ffcc00;color:#000;padding:12px 20px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;">💰 PAY 2,500 NOW - PESAPAL</a></div>
-<div class="bio-item"><div><b>1. Biology Scenario Based</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1IP0HVcH_aFpvY8FlSokryM5apqpOBARO/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>2. Biology Paper 2 Mock 2026</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1RE3IHO9NhCBVW_QAYf7raVx82QAwKIZX/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>3. Biology New Curriculum Paper</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1-AAmkTf7rguHaHabCpC_oJG8nWmkDllx/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>4. Biology Mock File 4</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1XojkddyG_DBRrajYupROP2sMtURIwQtN/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>5. Biology Mock File 5</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/14HHeGt-ld5tZ6mwIttDjFhyerJS79PW7/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>6. Biology Mock File 6</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1_bkugvLlTAi9RceH1Hj46Pz3p3y16x1T/view?usp=drivesdk')">FREE</button></div></div>
-<div class="bio-item"><div><b>7. Biology Mock File 7</b></div><div><button class="free-btn" onclick="directDownload('https://drive.google.com/file/d/1Aq3Vb3eXtYtYTpFWNQ71kF1KzdkMqu22/view?usp=drivesdk')">FREE</button></div></div>
-<button onclick="closeBiology()" style="width:100%;margin-top:12px;padding:10px;background:#f1f5f9;border:none;border-radius:8px;font-weight:700">Close</button>
-</div></div>
+<div style="text-align:center;margin:25px 0"><h2>Past Papers — Practice</h2><p style="font-size:12px;color:#64748b">PLE, UCE, UACE • Pay 2,500 ONCE for Registration → Download FREE</p>
+<button class="pay-big" onclick="document.getElementById('biology').scrollIntoView({behavior:'smooth'})">Browse Biology 7 in 1 →</button>
+<button class="pay-big" onclick="openPay('')">💰 Pay 2,500 to Unlock All</button>
+</div>
 
-<div class="footer"><div><b>Mityana Study Hub</b><br>CEO Dr Daniel - "Never plan to kill a dream"<br>Pay Registration 2,500 ONCE via Pesapal → Download FREE<br>© 2026 Mityana Study Hub.</div><div><b style="color:#facc15">Quick Links</b><br>Subjects<br>Past Papers<br>Contact</div><div><b style="color:#facc15">Contact</b><br>Mityana, Uganda<br>Phone / WhatsApp: 0782779663<br>Pesapal: 2,500 ONCE</div></div>
+<div id="biology" class="bio-list">
+<h3 style="text-align:center;color:#1e3a8a">🧬 Mityana Study Hub - S4 Biology Mocks 2026</h3>
+<p style="text-align:center;font-size:11px;color:#64748b">Wakissha • Buddo • Wunna • Scenario Based • New Curriculum</p>
+<p style="text-align:center;font-size:12px;color:#10B981;font-weight:800;margin:10px 0">💳 Pay 2,500 ONCE → Download All FREE!</p>
+<div id="papersList"></div>
+</div>
+
+<!-- CEO UPLOAD BUTTON - ALWAYS VISIBLE -->
+<button class="ceo-btn" onclick="showCEO()">🔐 CEO UPLOAD — Tap Here</button>
+
+<div id="ceoPanel" class="ceo-panel">
+<h3 style="text-align:center;color:#1e3a8a">🔐 CEO UPLOAD</h3>
+<p style="font-size:11px;text-align:center;color:#64748b">CEO Dr Daniel - Never plan to kill a dream</p>
+<input id="ceoPass" type="password" placeholder="CEO Password">
+<input id="ghToken" type="password" placeholder="GitHub Token - github_pat_...">
+<input id="ghUser" value="theist-blim" placeholder="GitHub Username">
+<input id="ghRepo" value="Study-resources-centre-" placeholder="Repo Name">
+<button style="background:#1e3a8a;color:white" onclick="saveSettings()">💾 SAVE MY SETTINGS</button>
+<hr style="margin:12px 0">
+<input id="paperTitle" placeholder="Title e.g. Biology Mock 2026">
+<select id="paperSubject"><option>Biology</option><option>Mathematics</option><option>English</option><option>Physics</option><option>Chemistry</option><option>Geography</option><option>Literature</option><option>History</option></select>
+<input id="paperFile" type="file" accept=".pdf,.docx,.jpg,.png">
+<button style="background:#facc15;color:#000" onclick="uploadDirect()">⬆️ UPLOAD DIRECT TO WEBSITE</button>
+<p id="uploadStatus" style="font-size:12px;text-align:center;margin-top:10px;color:#1e3a8a"></p>
+</div>
+
+</div>
+
+<div class="footer"><b>Mityana Study Hub</b><br>CEO Dr Daniel - "Never plan to kill a dream"<br>Pay Registration 2,500 ONCE via Pesapal → Download FREE<br>© 2026 Mityana Study Hub.<br><br><b>Quick Links</b><br>Subjects • Past Papers • Contact<br><br><b>Contact</b><br>Mityana, Uganda<br>Phone / WhatsApp: 0782779663<br>Pesapal: 2,500 ONCE</div>
+
+<div id="payModal" class="modal"><div class="modal-box"><h3>💳 Pay 2,500 ONCE</h3><p style="font-size:12px;margin:10px 0">Pay via Pesapal / MTN MoMo to 0777353793</p><button onclick="closePay()" style="padding:10px 20px;background:#1e3a8a;color:white;border:none;border-radius:10px">Close</button></div></div>
 
 <script>
-function directDownload(l){window.open(l,'_blank');}
-function openBiology(){document.getElementById('bioModal').style.display='flex';}
-function closeBiology(){document.getElementById('bioModal').style.display='none';}
+// SLIDESHOW
+let cur=0;let sl=document.querySelectorAll('.slide');let dt=document.querySelectorAll('.dot');
+setInterval(()=>{sl[cur].classList.remove('on');dt[cur].classList.remove('on');cur=(cur+1)%sl.length;sl[cur].classList.add('on');dt[cur].classList.add('on')},3500);
+
+// PAPERS - Your 7 Biology Papers
+const papers=[
+{t:"1. Biology Scenario Based Questions",s:"Study Sphere • S4 UCE • New Curriculum • PDF",l:"https://drive.google.com/file/d/1IP0HVcH_aFpvY8FlSokryM5apqpOBARO/view?usp=drivesdk"},
+{t:"2. Biology Paper 2 Mock 2026",s:"Wakissha Mock • Scenario Based",l:"https://drive.google.com/file/d/1RE3IHO9NhCBVW_QAYf7raVx82QAwKIZX/view?usp=drivesdk"},
+{t:"3. Biology New Curriculum Paper",s:"S4 • 2026 Mock • Full Paper",l:"https://drive.google.com/file/d/1-AAmkTf7rguHaHabCpC_oJG8nWmkDllx/view?usp=drivesdk"},
+{t:"4. Biology Mock File 4",s:"2026 • Scenario Based • Wakissha",l:"https://drive.google.com/file/d/1XojkddyG_DBRrajYupROP2sMtURIwQtN/view?usp=drivesdk"},
+{t:"5. Biology Mock File 5",s:"Buddo • Wunna • 2026",l:"https://drive.google.com/file/d/14HHeGt-ld5tZ6mwIttDjFhyerJS79PW7/view?usp=drivesdk"},
+{t:"6. Biology Mock File 6",s:"UCA • S4 Biology • New Format",l:"https://drive.google.com/file/d/1_bkugvLlTAi9RceH1Hj46Pz3p3y16x1T/view?usp=drivesdk"},
+{t:"7. Biology Mock File 7",s:"Latest 2026 • Scenario + Marking Guide",l:"https://drive.google.com/file/d/1Aq3Vb3eXtYtYTpFWNQ71kF1KzdkMqu22/view?usp=drivesdk"}
+];
+document.getElementById('papersList').innerHTML=papers.map(p=>`<div class="bio-item"><div><b>${p.t}</b><br><span style="font-size:11px;color:#64748b">${p.s}</span></div><button class="pay-btn" onclick="openPay('${p.l}')">Pay 2,500</button></div>`).join('');
+let currentLink='';
+function openPay(l){currentLink=l;document.getElementById('payModal').style.display='flex'}
+function closePay(){document.getElementById('payModal').style.display='none'}
+
+// CEO
+function showCEO(){document.getElementById('ceoPanel').style.display='block';document.getElementById('ceoPanel').scrollIntoView({behavior:'smooth'});let t=localStorage.getItem('ghToken');if(t)document.getElementById('ghToken').value=t;}
+function saveSettings(){
+if(document.getElementById('ceoPass').value!=='CEO2026'){alert('Wrong password! Use CEO2026');return}
+let tok=document.getElementById('ghToken').value.trim();
+if(!tok){alert('Paste your GitHub Token first!');return}
+localStorage.setItem('ghToken',tok);localStorage.setItem('ghUser',document.getElementById('ghUser').value);localStorage.setItem('ghRepo',document.getElementById('ghRepo').value);
+alert('✅ SETTINGS SAVED! Now you can upload direct!');}
+async function uploadDirect(){
+if(document.getElementById('ceoPass').value!=='CEO2026'){alert('Enter password CEO2026 first!');return}
+let tok=localStorage.getItem('ghToken')||document.getElementById('ghToken').value.trim();
+if(!tok){alert('Save your GitHub Token first!');return}
+let f=document.getElementById('paperFile').files[0];if(!f){alert('Choose a file first!');return}
+let title=document.getElementById('paperTitle').value||f.name;
+document.getElementById('uploadStatus').innerText='Uploading... please wait...';
+let reader=new FileReader();reader.onload=async()=>{
+let base64=reader.result.split(',')[1];
+let user=document.getElementById('ghUser').value||'theist-blim';let repo=document.getElementById('ghRepo').value||'Study-resources-centre-';
+let path='uploads/'+Date.now()+'-'+f.name.replace(/\s+/g,'-');
+let res=await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`,{method:'PUT',headers:{Authorization:'token '+tok,'Content-Type':'application/json'},body:JSON.stringify({message:'Upload '+title,content:base64})});
+if(res.ok){document.getElementById('uploadStatus').innerText='✅ UPLOADED SUCCESS! '+title;alert('✅ UPLOADED SUCCESS!');}else{document.getElementById('uploadStatus').innerText='❌ Upload failed. Check token.';alert('Upload failed - check token');}};
+reader.readAsDataURL(f);}
 </script>
 </body>
-                                                                                     </html>
+  </html>
