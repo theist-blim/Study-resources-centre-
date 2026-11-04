@@ -3,158 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEO Dr Daniel - Register 2,500 Only</title>
+<title>👑 CEO Dr Daniel - 2 Free Then 2,500</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fff5f5;color:#222}
-header{background:#b30000;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-header h1{font-size:23px}
-header p{font-size:13px}
-.top{display:flex;gap:10px;padding:12px;max-width:1100px;margin:auto;align-items:center;background:#fff;border-bottom:3px solid gold}
-.top img{width:90px;height:90px;object-fit:cover;border-radius:50%;border:3px solid gold}
-.top h2{font-size:20px;color:#b30000}
-.top p{font-size:13px}
-.btn{display:inline-block;background:#b30000;color:#fff;padding:9px 14px;border-radius:20px;font-weight:bold;text-decoration:none;font-size:13px;margin:3px;border:none;cursor:pointer}
-.btn-gold{background:gold;color:#000}
-.btn-green{background:#00a651;color:#fff}
-.btn-dark{background:#000;color:#fff}
-.main{max-width:1100px;margin:auto;padding:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.box{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.box h3{color:#b30000;font-size:17px;margin-bottom:8px;text-align:center}
-.box img{width:100%;height:110px;object-fit:cover;border-radius:8px}
-.box p{font-size:13px;margin:6px 0}
-.price{color:#b30000;font-weight:bold;font-size:16px}
-input,select,textarea{width:100%;padding:9px;margin:5px 0;border:1px solid #ccc;border-radius:7px;font-size:13px}
-.pay{border:2px solid #b30000;border-radius:8px;padding:8px;margin:5px 0;font-size:13px;text-align:center;background:#fff5f5}
-.share-btn{display:block;text-align:center;padding:10px;margin:5px 0;border-radius:10px;color:#fff;font-weight:bold;text-decoration:none;font-size:13px}
-.wa{background:#25D366}.fb{background:#1877F2}.tw{background:#000}.ig{background:#E1306C}
-.locked{opacity:.5;pointer-events:none}
-footer{background:#000;color:#fff;text-align:center;padding:12px;font-size:13px}
-@media(max-width:750px){.main{grid-template-columns:1fr}.top{flex-direction:column;text-align:center}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:linear-gradient(135deg,#ff00cc,#6600ff,#00ccff,#00ff99);background-attachment:fixed}
+header{background:linear-gradient(90deg,#ff0080,#ff8a00,#ffcc00,#00e676,#00b0ff,#a100ff);background-size:300% 300%;animation:rb 6s infinite;padding:12px;text-align:center;color:#fff;text-shadow:2px 2px 4px #000;position:sticky;top:0;z-index:20}
+@keyframes rb{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.top{max-width:900px;margin:10px auto;background:#fff;border-radius:18px;padding:14px;display:flex;gap:14px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,.3);border:4px solid #ffcc00}
+.top img{width:110px;height:110px;object-fit:cover;border-radius:50%;border:5px solid #ff0080;box-shadow:0 0 0 4px #ffcc00,0 0 0 8px #00b0ff}
+.nav{max-width:900px;margin:10px auto;display:flex;gap:8px;justify-content:center}
+.nav button{flex:1;padding:12px;border:none;border-radius:20px;font-weight:900;font-size:15px;cursor:pointer}
+.nav button.active{outline:4px solid #fff;transform:scale(1.05)}
+.page{display:none;max-width:900px;margin:auto;padding:10px}
+.page.active{display:block}
+.box{background:#fff;border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 8px 20px rgba(0,0,0,.25);border-top:7px solid #ff0080}
+.box h3{font-size:17px;text-align:center;padding:7px;border-radius:10px;color:#fff;margin-bottom:8px}
+.h-pink{background:#ff0080}.h-blue{background:#00b0ff}.h-green{background:#00a651}.h-gold{background:#ff8a00}.h-purple{background:#a100ff}.h-red{background:#ff1744}
+.btn{display:inline-block;padding:9px 16px;border-radius:25px;font-weight:900;text-decoration:none;font-size:13px;margin:3px;border:none;cursor:pointer}
+.btn-pink{background:#ff0080;color:#fff}.btn-blue{background:#00b0ff;color:#fff}.btn-green{background:#00e676;color:#000}.btn-gold{background:#ffcc00;color:#000}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#333;color:#fff;padding:7px;text-align:left}
+td{border-bottom:1px solid #eee;padding:6px;font-weight:600}
+td img{width:45px;height:45px;object-fit:cover;border-radius:8px;border:2px solid #ffcc00}
+td a{color:#ff0080;font-weight:900;text-decoration:none;background:#ffe0f0;padding:3px 7px;border-radius:10px}
+input,select{width:100%;padding:10px;margin:5px 0;border:2px solid #ffcc00;border-radius:12px;background:#fffde7}
+.pay{border:3px dashed #ff0080;border-radius:12px;padding:9px;text-align:center;background:#fff0f5}
+.slideshow{position:relative;width:100%;height:220px;border-radius:14px;overflow:hidden;border:3px solid #ffcc00}
+.slide{position:absolute;width:100%;height:100%;display:none}
+.slide.active{display:block}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide-text{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.65);color:#fff;text-align:center;padding:10px}
+.dots{text-align:center;margin-top:6px}
+.dot{display:inline-block;width:12px;height:12px;background:#ccc;border-radius:50%;margin:2px;cursor:pointer}
+.dot.active{background:#ff0080}
+.share-btn{display:block;text-align:center;padding:10px;margin:5px 0;border-radius:12px;color:#fff;font-weight:900;text-decoration:none}
+.wa{background:#25D366}.fb{background:#1877F2}.tw{background:#000}.ig{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.class-img{width:100%;height:130px;object-fit:cover;border-radius:12px;border:3px solid #ffcc00}
+@media(max-width:650px){.grid2{grid-template-columns:1fr}.top{flex-direction:column;text-align:center}}
+footer{background:#000;color:#fff;text-align:center;padding:12px;font-size:12px}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>👑 CEO Dr Daniel</h1>
-  <p>Never plan to kill a dream ✨ | Doctor • Teacher • CEO • Motivator | Kampala, Uganda</p>
+  <h1>🌈👑 CEO Dr Daniel 🎓✨</h1>
+  <p>🔥 Never plan to kill a dream ✨ | Learn • Play • Download • Succeed 🎉</p>
 </header>
 
 <div class="top">
   <img src="profile.jpg" alt="CEO Dr Daniel">
   <div>
-    <h2>CEO Dr Daniel - Welcome!</h2>
-    <p><b>KEY INFORMATION:</b> Pay ONLY <b>UGX 2,500</b> for Registration. After you Register, <b>DOWNLOAD EVERYTHING FOR FREE!</b> No other payment!</p>
-    <a class="btn btn-gold" href="#books">📚 Books</a>
-    <a class="btn" href="#students">🎓 Students</a>
-    <a class="btn btn-green" href="#download">📥 2 FREE Files</a>
-    <a class="btn" href="#register">📝 Register 2,500</a>
-    <a class="btn btn-dark" href="#share">🔗 Share & Unlock</a>
+    <h2>Welcome Super Students! 🚀</h2>
+    <p>Hi! I'm <b>CEO Dr Daniel</b> — Your favourite Teacher! 🌈</p>
+    <p style="background:#ffcc00;padding:6px;border-radius:10px;font-weight:900;font-size:13px">🎁 EVERYONE GETS 2 FREE DOWNLOADS! Then Pay 2,500 For Unlimited!</p>
+    <p id="statusBar" style="background:#00e676;padding:7px;border-radius:10px;font-weight:900;font-size:12px;margin-top:5px">🎁 You Have 2 FREE Downloads Left!</p>
+    <a class="btn btn-pink" href="#" onclick="showPage(2);return false;">📚 Books</a>
+    <a class="btn btn-blue" href="#" onclick="showPage(2);return false;">📖 Subjects</a>
+    <a class="btn btn-gold" href="#register1">📝 Pay 2,500</a>
   </div>
 </div>
 
-<div class="main">
-
-  <div class="box" id="books">
-    <h3>📚 MY BOOKS - KEY INFO</h3>
-    <img src="book1.jpg">
-    <p><b>1. Never Kill A Dream</b> - Motivation</p>
-    <p><b>2. Doctor's Guide</b> - Medicine Made Simple</p>
-    <p><b>3. CEO Mindset</b> - How To Become A Leader</p>
-    <p><b>4. Study Notes + Success Guide</b></p>
-    <p style="background:gold;padding:8px;border-radius:8px;text-align:center"><b>ALL FREE AFTER REGISTRATION!</b><br>Pay Only 2,500 Once</p>
-    <p>✅ No payment for books<br>✅ No payment for notes<br>✅ Only 2,500 Registration</p>
-  </div>
-
-  <div class="box" id="students">
-    <h3>🎓 MY STUDENTS</h3>
-    <img src="students.jpg">
-    <p>✅ Join 1000+ Students Learning With Dr Daniel</p>
-    <p>✅ Future Doctors & CEOs</p>
-    <p>✅ Class 2026 - Now Open!</p>
-    <p><b>How It Works:</b><br>1. Register - Pay 2,500<br>2. Get Access<br>3. Download Everything Free</p>
-    <a class="btn btn-gold" href="#register">Join Us Now - 2,500 Only</a>
-  </div>
-
-  <div class="box" id="register">
-    <h3>📝 REGISTER - ONLY UGX 2,500</h3>
-    <p style="text-align:center"><span class="price">UGX 2,500 ONLY</span><br>One Time Payment - Then All FREE!</p>
-    <form onsubmit="showAllFree();return false;">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="tel" placeholder="Phone / WhatsApp" required>
-      <select><option>What do you want?</option><option>Join Students Class</option><option>Download All Books Free</option><option>Free Download Only</option></select>
-      <div class="pay">📱 <b>MTN MoMo:</b> 0782779663 - Dr Daniel<br>Send <b>2,500</b></div>
-      <div class="pay">🏦 <b>Bank:</b> Coming Soon</div>
-      <input type="text" placeholder="Transaction ID / Reference (2,500 Paid)" required>
-      <button class="btn btn-green" style="width:100%">✅ I PAID 2,500 - UNLOCK ALL FREE</button>
-    </form>
-    <div id="allFree" style="display:none;background:#e8ffe8;padding:10px;border-radius:8px;text-align:center;margin-top:8px">
-      <b>🎉 CONGRATULATIONS!</b><br>You Registered! Now Download EVERYTHING FREE Below 👇
-    </div>
-  </div>
-
-  <div class="box" id="download">
-    <h3>📥 2 FILES FREE FOR EVERYONE</h3>
-    <p>No Payment Needed - For Everyone!</p>
-    <p>✅ <b>File 1:</b> Never Kill A Dream - Sample</p>
-    <a class="btn btn-green" href="free-book.pdf" download>📥 DOWNLOAD FILE 1 FREE</a>
-    <p>✅ <b>File 2:</b> Motivation Notes</p>
-    <a class="btn btn-green" href="free-notes.pdf" download>📥 DOWNLOAD FILE 2 FREE</a>
-    <p style="margin-top:8px">Want ALL Files? Register for 2,500 above OR Share to 5 Groups below!</p>
-  </div>
-
-  <div class="box" id="share">
-    <h3>🔗 SHARE & UNLOCK 2 MORE FREE</h3>
-    <p><b>Share this website to 5 Groups</b> on WhatsApp, Facebook, Twitter, Instagram — Then Download 2 More Files FREE!</p>
-    <p id="shareCount" style="text-align:center;font-weight:bold;color:#b30000">Shares: 0 / 5 Groups</p>
-    <a class="share-btn wa" href="https://wa.me/?text=Join%20CEO%20Dr%20Daniel%20-%20Register%202500%20Only%20Then%20Download%20Everything%20FREE!%20Never%20plan%20to%20kill%20a%20dream%20✨%20https://yourwebsite.com" target="_blank" onclick="addShare()">📱 Share on WhatsApp</a>
-    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" onclick="addShare()">📘 Share on Facebook</a>
-    <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=CEO%20Dr%20Daniel%20-%20Register%202500%20Only%20Then%20Download%20Everything%20FREE!%20Never%20plan%20to%20kill%20a%20dream&url=https://yourwebsite.com" target="_blank" onclick="addShare()">𝕏 Share on Twitter / X</a>
-    <a class="share-btn ig" href="https://www.instagram.com/" target="_blank" onclick="addShare()">📸 Share on Instagram</a>
-    <button class="btn" style="width:100%" onclick="addShare()">✅ I Shared To A Group - Click +1</button>
-    <div id="unlockFiles" class="locked" style="margin-top:10px;text-align:center;border-top:1px dashed #ccc;padding-top:10px">
-      <p><b>🔒 Locked Files - Share to 5 Groups to Unlock</b></p>
-      <a class="btn btn-gold" href="bonus-book.pdf" download>📥 BONUS FILE 3 FREE</a>
-      <a class="btn btn-gold" href="bonus-notes.pdf" download>📥 BONUS FILE 4 FREE</a>
-    </div>
-  </div>
-
-  <div class="box" id="allFiles">
-    <h3>📚 ALL FILES - AFTER REGISTRATION</h3>
-    <p>These unlock after you Register (2,500) OR Share to 5 Groups:</p>
-    <p>📕 Never Kill A Dream - Full Book</p>
-    <p>📗 Doctor's Guide - Full</p>
-    <p>📘 CEO Mindset - Full</p>
-    <p>📙 Study Notes + Exam Guide</p>
-    <p style="text-align:center"><b>Register 2,500 = ALL FREE!</b></p>
-    <a class="btn btn-green" href="#register" style="width:100%;text-align:center">REGISTER NOW - 2,500</a>
-  </div>
-
+<div class="nav">
+  <button id="btn1" class="active" style="background:#ff0080;color:#fff" onclick="showPage(1)">🏠 PAGE 1 - HOME & REGISTER</button>
+  <button id="btn2" style="background:#00b0ff;color:#fff" onclick="showPage(2)">📖 PAGE 2 - ALL SUBJECTS</button>
 </div>
 
-<footer>
-  <b>👑 CEO Dr Daniel</b> | Never plan to kill a dream ✨ | Pay Only 2,500 Registration - Then Everything FREE | © 2026 - Kampala, Uganda<br>
-  MTN MoMo: 0782779663 | WhatsApp: <a style="color:gold" href="https://wa.me/256782779663">Chat on WhatsApp</a>
-</footer>
+<div id="page1" class="page active">
+  <div class="box">
+    <h3 class="h-pink">🎬 SLIDESHOW - YOUR PICTURES HERE ✨</h3>
+    <div class="slideshow">
+      <div class="slide active"><img src="book1.jpg"><div class="slide-text"><h2>📚 Never Kill A Dream</h2><p>Motivation Book</p><a class="btn btn-gold" href="#" onclick="tryDownload('book1.pdf','Never Kill A Dream');return false;">📥 Download Now</a></div></div>
+      <div class="slide"><img src="book2.jpg"><div class="slide-text"><h2>🩺 Doctor's Guide</h2><p>Medicine Made Simple!</p><a class="btn btn-gold" href="#" onclick="tryDownload('book2.pdf','Doctor Guide');return false;">📥 Download Now</a></div></div>
+      <div class="slide"><img src="book3.jpg"><div class="slide-text"><h2>👑 CEO Mindset</h2><p>How To Become A Leader!</p><a class="btn btn-gold" href="#" onclick="tryDownload('book3.pdf','CEO Mindset');return false;">📥 Download Now</a></div></div>
+      <div class="slide"><img src="students.jpg"><div class="slide-text"><h2>🎓 My Class - 1000+ Students!</h2><p>Primary + Secondary - All Subjects!</p><a class="btn btn-gold" href="#register1">🚀 Join 2,500 Only</a></div></div>
+      <div class="slide"><img src="profile.jpg"><div class="slide-text"><h2>🌈 CEO Dr Daniel</h2><p>Biology, Physics, Chemistry, Maths - All Subjects!</p><a class="btn btn-gold" href="#" onclick="showPage(2)">📖 See All Subjects</a></div></div>
+    </div>
+    <div class="dots"><span class="dot active" onclick="goSlide(0)"></span><span class="dot" onclick="goSlide(1)"></span><span class="dot" onclick="goSlide(2)"></span><span class="dot" onclick="goSlide(3)"></span><span class="dot" onclick="goSlide(4)"></span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="box" id="register1">
+      <h3 class="h-gold">📝 PAY 2,500 - FOR CONTINUOUS DOWNLOADING! 🎉</h3>
+      <p style="text-align:center">After your 2 FREE, pay <b style="color:#ff0080">2,500 ONLY</b> - Then download WITHOUT disturbance, UNLIMITED!</p>
+      <form onsubmit="doRegister();return false;">
+        <input type="text" id="regName" placeholder="😊 Full Name" required>
+        <input type="tel" placeholder="📱 Phone / WhatsApp" required>
+        <select><option>🎓 Choose Class</option><option>Primary P1-P7</option><option>Secondary S1-S4</option><option>Secondary S5-S6</option></select>
+        <div class="pay">📱 <b>MTN MoMo: 0782779663</b> - Dr Daniel<br>Send <b>2,500</b></div>
+        <input type="text" placeholder="🧾 Transaction ID" required>
+        <button class="btn btn-green" style="width:100%">✅ I PAID 2,500 - UNLOCK UNLIMITED! 🎉</button>
+      </form>
+    </div>
+    <div>
+      <div class="box">
+        <h3 class="h-green">🎓 MY CLASS - YOUR PICTURE</h3>
+        <img src="students.jpg" class="class-img">
+        <p>✅ 1000+ Students | ✅ Primary + Secondary | ✅ ALL Subjects</p>
+        <a class="btn btn-gold" href="#register1" style="width:100%;text-align:center">🚀 Join Class Now - 2,500</a>
+      </div>
+      <div class="box">
+        <h3 class="h-purple">🔗 SHARE TO 5 GROUPS = GET 2 MORE FREE! 📣</h3>
+        <p>Share to <b>5 Groups</b> on WhatsApp, Facebook, Twitter/X, Instagram — You get <b>2 MORE files FREE!</b> No payment for those 2!</p>
+        <p id="shareCount" style="text-align:center;font-weight:900;color:#ff0080">Shares: 0 / 5 Groups 📣</p>
+        <a class="share-btn wa" href="https://wa.me/?text=Join%20CEO%20Dr%20Daniel%20-%20Get%202%20FREE%20Downloads!%20Then%20Pay%202500%20For%20Unlimited!" target="_blank" onclick="addShare()">📱 Share on WhatsApp</a>
+        <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" onclick="addShare()">📘 Share on Facebook</a>
+        <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=CEO%20Dr%20Daniel%20-%20Get%202%20FREE%20Downloads!%20Then%20Pay%202500%20For%20Unlimited!&url=https://yourwebsite.com" target="_blank" onclick="addShare()">𝕏 Share on Twitter / X</a>
+        <a class="share-btn ig" href="https://www.instagram.com/" target="_blank" onclick="addShare()">📸 Share on Instagram</a>
+        <button class="btn btn-pink" style="width:100%" onclick="addShare()">✅ I Shared To A Group - Click +1</button>
+        <p id="shareUnlock" style="text-align:center;font-size:12px">🔒 Share to 5 Groups to get 2 More Free</p>
+        <button class="btn btn-blue" style="width:100%" onclick="showPage(2)">📖 GO TO PAGE 2 - ALL SUBJECTS ➡️</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="page2" class="page">
+  <div class="box"><h3 class="h-blue">📖 ALL SUBJECTS - CLICK TO DOWNLOAD! 🌈</h3><p style="text-align:center">MTN: <b>0782779663</b> | RULE: 2 FREE For Everyone + 2 FREE If You Share To 5 Groups + Unlimited If You Pay 2,500</p></div>
+  <div class="grid2">
+    <div class="box"><h3 class="h-pink">🌈 PRIMARY P1-P7</h3><table><tr><th>Subject</th><th>Download</th></tr><tr><td>📐 Mathematics</td><td><a href="#" onclick="tryDownload('primary-maths.pdf','Primary Maths');return false;">📥 Download</a></td></tr><tr><td>📖 English</td><td><a href="#" onclick="tryDownload('primary-english.pdf','Primary English');return false;">📥 Download</a></td></tr><tr><td>🔬 Science</td><td><a href="#" onclick="tryDownload('primary-science.pdf','Primary Science');return false;">📥 Download</a></td></tr><tr><td>🌍 SST</td><td><a href="#" onclick="tryDownload('primary-sst.pdf','Primary SST');return false;">📥 Download</a></td></tr><tr><td>📚 Luganda</td><td><a href="#" onclick="tryDownload('primary-luganda.pdf','Primary Luganda');return false;">📥 Download</a></td></tr><tr><td>✝️ CRE</td><td><a href="#" onclick="tryDownload('primary-cre.pdf','Primary CRE');return false;">📥 Download</a></td></tr><tr><td>☪️ IRE</td><td><a href="#" onclick="tryDownload('primary-ire.pdf','Primary IRE');return false;">📥 Download</a></td></tr><tr><td>🎨 Art</td><td><a href="#" onclick="tryDownload('primary-art.pdf','Primary Art');return false;">📥 Download</a></td></tr><tr><td>🎵 MDD</td><td><a href="#" onclick="tryDownload('primary-mdd.pdf','Primary MDD');return false;">📥 Download</a></td></tr><tr><td>⚽ PE</td><td><a href="#" onclick="tryDownload('primary-pe.pdf','Primary PE');return false;">📥 Download</a></td></tr><tr><td>🗣️ Kiswahili</td><td><a href="#" onclick="tryDownload('primary-kiswahili.pdf','Primary Kiswahili');return false;">📥 Download</a></td></tr><tr><td>💻 ICT</td><td><a href="#" onclick="tryDownload('primary-ict.pdf','Primary ICT');return false;">📥 Download</a></td></tr></table></div>
+    <div class="box"><h3 class="h-green">🧪 SECONDARY S1-S4</h3><table><tr><th>Subject</th><th>Download</th></tr><tr><td>📖 English</td><td><a href="#" onclick="tryDownload('s1-english.pdf','S1 English');return false;">📥 Download</a></td></tr><tr><td>📐 Maths</td><td><a href="#" onclick="tryDownload('s1-maths.pdf','S1 Maths');return false;">📥 Download</a></td></tr><tr><td>🧬 Biology</td><td><a href="#" onclick="tryDownload('s1-biology.pdf','S1 Biology');return false;">📥 Download</a></td></tr><tr><td>⚛️ Physics</td><td><a href="#" onclick="tryDownload('s1-physics.pdf','S1 Physics');return false;">📥 Download</a></td></tr><tr><td>🧪 Chemistry</td><td><a href="#" onclick="tryDownload('s1-chemistry.pdf','S1 Chemistry');return false;">📥 Download</a></td></tr><tr><td>🌍 Geography</td><td><a href="#" onclick="tryDownload('s1-geography.pdf','S1 Geography');return false;">📥 Download</a></td></tr><tr><td>📜 History</td><td><a href="#" onclick="tryDownload('s1-history.pdf','S1 History');return false;">📥 Download</a></td></tr><tr><td>✝️ CRE</td><td><a href="#" onclick="tryDownload('s1-cre.pdf','S1 CRE');return false;">📥 Download</a></td></tr><tr><td>🌾 Agriculture</td><td><a href="#" onclick="tryDownload('s1-agriculture.pdf','S1 Agriculture');return false;">📥 Download</a></td></tr><tr><td>💻 ICT</td><td><a href="#" onclick="tryDownload('s1-ict.pdf','S1 ICT');return false;">📥 Download</a></td></tr><tr><td>📚 Luganda</td><td><a href="#" onclick="tryDownload('s1-luganda.pdf','S1 Luganda');return false;">📥 Download</a></td></tr><tr><td>🗣️ Kiswahili</td><td><a href="#" onclick="tryDownload('s1-kiswahili.pdf','S1 Kiswahili');return false;">📥 Download</a></td></tr><tr><td>🇫🇷 French</td><td><a href="#" onclick="tryDownload('s1-french.pdf','S1 French');return false;">📥 Download</a></td></tr><tr><td>🎨 Art</td><td><a href="#" onclick="tryDownload('s1-art.pdf','S1 Art');return false;">📥 Download</a></td></tr><tr><td>💼 Entrepreneurship</td><td><a href="#" onclick="tryDownload('s1-entrepreneurship.pdf','S1 Entrepreneurship');return false;">📥 Download</a></td></tr><tr><td>📊 Commerce</td><td><a href="#" onclick="tryDownload('s1-commerce.pdf','S1 Commerce');return false;">📥 Download</a></td></tr><tr><td>📖 Literature</td><td><a href="#" onclick="tryDownload('s1-literature.pdf','S1 Literature');return false;">📥 Download</a></td></tr></table></div>
+    <div class="box"><h3 class="h-purple">🎓 SECONDARY S5-S6</h3><table><tr><th>Subject</th><th>Download</th></tr><tr><td>📝 General Paper</td><td><a href="#" onclick="tryDownload('s5-generalpaper.pdf','General Paper');return false;">📥 Download</a></td></tr><tr><td>🧬 Biology</td><td><a href="#" onclick="tryDownload('s5-biology.pdf','S5 Biology');return false;">📥 Download</a></td></tr><tr><td>🧪 Chemistry</td><td><a href="#" onclick="tryDownload('s5-chemistry.pdf','S5 Chemistry');return false;">📥 Download</a></td></tr><tr><td>⚛️ Physics</td><td><a href="#" onclick="tryDownload('s5-physics.pdf','S5 Physics');return false;">📥 Download</a></td></tr><tr><td>📐 Maths</td><td><a href="#" onclick="tryDownload('s5-maths.pdf','S5 Maths');return false;">📥 Download</a></td></tr><tr><td>🌍 Geography</td><td><a href="#" onclick="tryDownload('s5-geography.pdf','S5 Geography');return false;">📥 Download</a></td></tr><tr><td>📜 History</td><td><a href="#" onclick="tryDownload('s5-history.pdf','S5 History');return false;">📥 Download</a></td></tr><tr><td>📊 Economics</td><td><a href="#" onclick="tryDownload('s5-economics.pdf','S5 Economics');return false;">📥 Download</a></td></tr><tr><td>📖 Literature</td><td><a href="#" onclick="tryDownload('s5-literature.pdf','S5 Literature');return false;">📥 Download</a></td></tr><tr><td>✝️ Divinity</td><td><a href="#" onclick="tryDownload('s5-divinity.pdf','S5 Divinity');return false;">📥 Download</a></td></tr><tr><td>💼 Entrepreneurship</td><td><a href="#" onclick="tryDownload('s5-entrepreneurship.pdf','S5 Entrepreneurship');return false;">📥 Download</a></td></tr><tr><td>📊 Commerce</td><td><a href="#" onclick="tryDownload('s5-commerce.pdf','S5 Commerce');return false;">📥 Download</a></td></tr></table></div>
+    <div class="box"><h3 class="h-red">📚 BOOKS TABLE - WITH YOUR PICTURES</h3><table><tr><th>Picture</th><th>Book</th><th>Download</th></tr><tr><td><img src="book1.jpg"></td><td>🔥 Never Kill A Dream</td><td><a href="#" onclick="tryDownload('book1.pdf','Never Kill A Dream');return false;">📥 Free</a></td></tr><tr><td><img src="book2.jpg"></td><td>🩺 Doctor's Guide</td><td><a href="#" onclick="tryDownload('book2.pdf','Doctor Guide');return false;">📥 Free</a></td></tr><tr><td><img src="book3.jpg"></td><td>👑 CEO Mindset</td><td><a href="#" onclick="tryDownload('book3.pdf','CEO Mindset');return false;">📥 Free</a></td></tr><tr><td><img src="profile.jpg"></td><td>🚀 Study Guide - CEO Dr Daniel</td><td><a href="#" onclick="tryDownload('book4.pdf','Study Guide');return false;">📥 Free</a></td></tr></table><button class="btn btn-pink" style="width:100%;margin-top:10px" onclick="showPage(1)">⬅️ BACK TO PAGE 1</button></div>
+  </div>
+</div>
+
+<footer><b>🌈👑 CEO Dr Daniel</b> | Never plan to kill a dream ✨ | MTN: 0782779663 | © 2026 Kampala</footer>
 
 <script>
-let shares=0;
-function addShare(){
-  shares++;
-  document.getElementById('shareCount').innerText = 'Shares: '+shares+' / 5 Groups';
-  if(shares>=5){
-    document.getElementById('unlockFiles').classList.remove('locked');
-    document.getElementById('unlockFiles').innerHTML='<b>🎉 UNLOCKED!</b><br>You Shared To 5 Groups! Download 2 Files FREE!<br><a class="btn btn-green" href="bonus-book.pdf" download>📥 BONUS FILE 3 FREE</a><br><a class="btn btn-green" href="bonus-notes.pdf" download>📥 BONUS FILE 4 FREE</a>';
-    alert('Congratulations! You shared to 5 groups! 2 Bonus Files Unlocked FREE!');
-  } else {
-    alert('Thank you for sharing! '+shares+'/5 Groups. Share to '+(5-shares)+' more groups to unlock 2 FREE files!');
-  }
+let cur=0; let slides=document.querySelectorAll('.slide'); let dots=document.querySelectorAll('.dot');
+function goSlide(n){ slides[cur].classList.remove('active'); dots[cur].classList.remove('active'); cur=n; slides[cur].classList.add('active'); dots[cur].classList.add('active'); }
+setInterval(()=>{ goSlide((cur+1)%slides.length); },4000);
+function showPage(n){ document.getElementById('page1').classList.remove('active'); document.getElementById('page2').classList.remove('active'); document.getElementById('btn1').classList.remove('active'); document.getElementById('btn2').classList.remove('active'); document.getElementById('page'+n).classList.add('active'); document.getElementById('btn'+n).classList.add('active'); window.scrollTo(0,0); }
+
+// ✅ CORRECT RULE - AS CEO SAID:
+let isPaid = localStorage.getItem('ceo_paid')==='yes';
+let shares = parseInt(localStorage.getItem('ceo_shares')||'0');
+let shareBonusGiven = localStorage.getItem('ceo_bonus')==='yes';
+// Everyone starts with 2 FREE downloads
+let freeLeft = localStorage.getItem('ceo_free_left');
+if(freeLeft===null){ freeLeft=2; localStorage.setItem('ceo_free_left','2'); } else { freeLeft=parseInt(freeLeft); }
+
+function updateStatus(){
+  let b=document.getElementById('statusBar'); let s=document.getElementById('shareCount');
+  if(s) s.innerText='Shares: '+shares+' / 5 Groups 📣';
+  if(isPaid){ b.innerHTML='✅ PAID 2,500! Unlimited Download - No Disturbance! 🎉'; b.style.background='#00e676'; }
+  else if(freeLeft>0){ b.innerHTML='🎁 You Have '+freeLeft+' FREE Downloads Left!'; b.style.background='#00e676'; }
+  else if(shares<5){ b.innerHTML='🔒 Your 2 FREE Finished - Pay 2,500 For Unlimited OR Share To 5 Groups For 2 More FREE'; b.style.background='#ffcc00'; }
+  else { b.innerHTML='🎁 You Have '+freeLeft+' FREE Downloads Left!'; b.style.background='#00e676'; }
+  let su=document.getElementById('shareUnlock');
+  if(su && shares>=5) su.innerHTML='🎉 You Shared To 5 Groups! You Got 2 MORE FREE!';
 }
-function showAllFree(){
-  document.getElementById('allFree').style.display='block';
-  document.getElementById('allFree').scrollIntoView();
-  alert('Thank you '+document.getElementById('name').value+'! Registration Received. Now Download EVERYTHING FREE!');
+updateStatus();
+
+function tryDownload(f,n){
+  // RULE 1: Paid 2,500 -> Unlimited, no disturbance
+  if(isPaid){ alert('✅ PAID 2,500! Downloading '+n+'... Unlimited! 🎉'); dl(f); return; }
+  // RULE 2: Still have FREE downloads left (first 2, or +2 from share)
+  if(freeLeft>0){
+    freeLeft--; localStorage.setItem('ceo_free_left', freeLeft);
+    alert('🎁 FREE Download! Downloading '+n+'... You have '+freeLeft+' FREE left.');
+    dl(f); updateStatus(); return;
+  }
+  // RULE 3: No FREE left, not paid -> Must Pay OR Share
+  alert('🔒 Your FREE downloads are finished.\n\nTo continue:\n1. Pay 2,500 For Unlimited Download (No Disturbance)\n2. OR Share To 5 Groups To Get 2 MORE FREE');
+  showPage(1);
+}
+function dl(f){ let a=document.createElement('a'); a.href=f; a.download=f; document.body.appendChild(a); a.click(); a.remove(); }
+function doRegister(){ isPaid=true; localStorage.setItem('ceo_paid','yes'); updateStatus(); alert('🎉 Thank you '+document.getElementById('regName').value+'! You Paid 2,500! Now Download CONTINUOUSLY Without Disturbance! 🌈'); }
+function addShare(){
+  shares++; localStorage.setItem('ceo_shares',shares);
+  if(shares>=5 && !shareBonusGiven){
+    shareBonusGiven=true; localStorage.setItem('ceo_bonus','yes');
+    freeLeft+=2; localStorage.setItem('ceo_free_left', freeLeft);
+    alert('🎉 Congratulations! You Shared To 5 Groups! You Got 2 MORE Files FREE! You now have '+freeLeft+' FREE downloads!');
+  } else if(shares>=5){ alert('You already got your 2 bonus FREE. To continue unlimited, Pay 2,500.'); }
+  else { alert('Thank you! '+shares+'/5 Groups. Share to '+(5-shares)+' more groups to get 2 MORE FREE! 🎉'); }
+  updateStatus();
 }
 </script>
 </body>
-  </html>
+        </html>
