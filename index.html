@@ -49,4 +49,56 @@ input,select{width:100%;padding:11px;margin:6px 0;border:2px solid #ffcc00;borde
 .modalBox{background:#fff;border-radius:18px;padding:18px;max-width:450px;margin:30px auto}
 .modalBox textarea{width:100%;padding:10px;border:2px solid #ddd;border-radius:10px;min-height:80px}
 .readerBox{background:#fff;border-radius:18px;padding:15px;max-width:540px;margin:15px auto;min-height:80vh}
-.readerContent{background
+.readerContent{background:#fffde7;border:2px solid #ffca28;border-radius:12px;padding:15px;height:400px;overflow-y:auto;font-size:15px;line-height:1.7;white-space:pre-wrap}
+footer{background:#000;color:#fff;text-align:center;padding:16px;font-size:13px;border-top:5px solid #ffcc00}
+footer b{color:#ffcc00}
+</style>
+</head>
+<body>
+
+<header><div class="secret" onclick="openCode()">.</div>
+<h1>👑 CEO Dr Daniel</h1>
+<p>Never plan to kill a dream ✨ | Doctor • Teacher • CEO • Motivator | Kampala, Uganda</p>
+</header>
+
+<div class="top">
+<img src="profile.jpg" onerror="this.src='https://via.placeholder.com/120/d50000/ffffff?text=DR'">
+<h2>CEO Dr Daniel - Welcome!</h2>
+<p><b>KEY INFORMATION:</b> Pay ONLY <b>UGX 2,500</b> for Registration. After you Register, <b>DOWNLOAD EVERYTHING FOR FREE!</b> No other payment!</p>
+<p id="statusBar" style="background:#ffcc00;padding:8px;border-radius:12px;font-weight:900;margin-top:8px">🎁 FREE DOWNLOADS LEFT: 2</p>
+<a class="btn btn-yellow" href="#" onclick="showPage(1);return false;">📚 PAGE 1 - Books</a>
+<a class="btn btn-red" href="#" onclick="showPage(2);return false;">🎓 PAGE 2 - Levels</a>
+</div>
+
+<div class="searchWrap"><input type="text" id="searchInput" oninput="doSearch()" placeholder="🔍 SEARCH BAR — Search any information here... Physics, Maths, Biology, Dream"></div>
+
+<div class="pages">
+<button id="btnP1" class="pageActive" onclick="showPage(1)">📚 PAGE 1 - HOME + BOOKS</button>
+<button id="btnP2" class="pageOff" onclick="showPage(2)">🎓 PAGE 2 - PRIMARY / SECONDARY / A-LEVEL</button>
+</div>
+
+<div class="slideWrap"><h3 style="text-align:center;color:#d50000">📸 SLIDE - PROFILE • STUDENTS • BOOKS</h3>
+<div class="slide" id="bookSlide">
+<div class="slideCard"><img src="profile.jpg" onerror="this.style.display='none'"><b>CEO Dr Daniel</b><span>Profile Picture • Founder</span></div>
+<div class="slideCard"><img src="students.jpg" onerror="this.style.display='none'"><b>My Students</b><span>1000+ Happy Students • Class</span></div>
+<div class="slideCard"><img src="books.jpg" onerror="this.style.display='none'"><b>My Books</b><span>Never Kill A Dream</span></div>
+<div class="slideCard"><img src="profile.jpg" onerror="this.style.display='none'"><b>CEO Dr Daniel</b><span>Doctor • Teacher • CEO</span></div>
+<div class="slideCard"><img src="students.jpg" onerror="this.style.display='none'"><b>Students Learning</b><span>Primary + Secondary</span></div>
+<div class="slideCard"><img src="books.jpg" onerror="this.style.display='none'"><b>Books Again</b><span>Motivation + Study</span></div>
+</div>
+</div>
+
+<div id="page1">
+<div class="box" id="books">
+<h3>📚 MY BOOKS - BOOKS FITTED IN THEIR SECTION</h3>
+<img src="books.jpg" onerror="this.style.display='none'" style="width:100%;height:130px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00;background:#fff0f0">
+<p style="text-align:center;font-size:12px;color:#666;margin:8px 0">Books are ONLY here. Tap folder to see files CEO uploaded.</p>
+<div id="booksList"></div>
+</div>
+
+<div class="box" id="class">
+<h3>🎓 MY CLASS - STUDENTS</h3>
+<img src="students.jpg" onerror="this.style.display='none'" style="width:100%;height:110px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00">
+<p>✅ 1000+ Students Already Learning!</p>
+<p>✅ Primary + Secondary + A-Level</p>
+<a class="btn btn-gold" href="#" onclick="showPage(2);return false;" style="width:100%;text-align:center">🚀 Go
