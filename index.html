@@ -48,7 +48,7 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <div class="top">
 <img src="profile.jpg" onerror="this.src='https://via.placeholder.com/120/d50000/ffffff?text=DR'">
 <h2>CEO Dr Daniel - Welcome!</h2>
-<p><b>KEY:</b> Pay ONLY <b>UGX 2,500</b> with <b>Pesapal - MTN / Airtel / Card</b>. After you Register, <b>DOWNLOAD + VIEW EVERYTHING!</b><br><b>VIEW IS FREE FOR EVERYONE!</b></p>
+<p><b>KEY:</b> Pay ONLY <b>UGX 2,500</b> with <b>Pesapal - MTN / Airtel / Card</b>. Money goes DIRECT to CEO account. After you Register, <b>DOWNLOAD + VIEW EVERYTHING!</b><br><b>VIEW IS FREE FOR EVERYONE!</b></p>
 <p id="statusBar" style="background:#ffcc00;padding:8px;border-radius:12px;font-weight:900;margin-top:8px">🎁 FREE DOWNLOADS LEFT: 2 | 👀 VIEW FREE FOR ALL</p>
 <a class="btn btn-yellow" href="#" onclick="showPage(1);return false;">📚 PAGE 1 - Books</a>
 <a class="btn btn-red" href="#" onclick="showPage(2);return false;">🎓 PAGE 2 - Levels</a>
@@ -57,8 +57,8 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <div class="searchWrap"><input id="searchInput" oninput="doSearch()" placeholder="🔍 SEARCH BAR - Search here... Physics, Maths, Biology"></div>
 
 <div class="pages">
-<button id="btnP1" class="pageActive" onclick="showPage(1)">📚 PAGE 1 - HOME + BOOKS</button>
-<button id="btnP2" class="pageOff" onclick="showPage(2)">🎓 PAGE 2 - LEVELS</button>
+<button type="button" id="btnP1" class="pageActive" onclick="showPage(1)">📚 PAGE 1 - HOME + BOOKS</button>
+<button type="button" id="btnP2" class="pageOff" onclick="showPage(2)">🎓 PAGE 2 - LEVELS</button>
 </div>
 
 <div class="slideWrap"><h3 style="text-align:center;color:#d50000">📸 SLIDE - PROFILE • STUDENTS • BOOKS</h3>
@@ -73,33 +73,35 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <div class="box"><h3>📚 MY BOOKS - BOOKS FITTED IN THEIR SECTION</h3>
 <img src="books.jpg" style="width:100%;height:130px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00;background:#fff0f0">
 <p style="text-align:center;font-size:12px">Tap folder. Tap VIEW to read FREE. Tap DOWNLOAD to download.</p><div id="booksList"></div></div>
-<div class="box"><h3>🎓 MY CLASS - STUDENTS</h3><img src="students.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00"><p>✅ 1000+ Students Already Learning!</p><a class="btn btn-yellow" href="#" onclick="showPage(2);return false;" style="width:100%;text-align:center">🚀 Go To Levels - PAGE 2</a></div>
-<div class="box"><h3>👀 VIEW + DOWNLOAD - FOR EVERYONE WHO DOWNLOADS</h3><p>Anyone who downloads can also VIEW the paper. Anyone can VIEW FREE. Download needs 2 FREE or Pay 2,500 with Pesapal.</p></div>
+<div class="box"><h3>🎓 MY CLASS - STUDENTS</h3><img src="students.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00"><p>✅ 1000+ Students Already Learning!</p><button type="button" class="btn btn-yellow" style="width:100%;text-align:center" onclick="showPage(2)">🚀 Go To Levels - PAGE 2</button></div>
+<div class="box"><h3>👀 VIEW + DOWNLOAD - FOR EVERYONE WHO DOWNLOADS</h3><p>Anyone who downloads can also VIEW the paper. Anyone can VIEW FREE. Download needs 2 FREE or Pay 2,500 with Pesapal DIRECT to CEO.</p></div>
 </div>
 
 <div id="page2" style="display:none">
-<div class="box"><h3>🎓 LEVELS - TAP SUBJECT TO OPEN, SEE CEO FILES INSIDE</h3><p style="text-align:center;font-size:12px">Tap VIEW to read FREE. Tap DOWNLOAD to download. Downloader can also VIEW.</p>
+<div class="box"><h3>🎓 LEVELS - TAP SUBJECT TO OPEN, SEE CEO FILES INSIDE</h3>
+<p style="text-align:center;font-size:12px">Tap VIEW to read FREE. Tap DOWNLOAD to download. Downloader can also VIEW.</p>
 <div class="levelTitle">🌈 PRIMARY P1-P7 - ALL SUBJECTS</div><div id="primaryList"></div>
 <div class="levelTitle">🧪 SECONDARY S1-S4 - ALL SUBJECTS</div><div id="secondaryList"></div>
 <div class="levelTitle">🎓 A-LEVEL S5-S6 - ALL SUBJECTS</div><div id="alevelList"></div>
+<button type="button" class="btn btn-red" style="width:100%;margin-top:10px" onclick="showPage(1)">⬅️ BACK TO PAGE 1</button>
 </div></div>
 
-<div class="box"><h3>📝 REGISTER - ONLY UGX 2,500 - PAY WITH PESAPAL!</h3>
-<p style="text-align:center;font-size:13px;color:#d50000;font-weight:900">PAY WITH MTN MoMo / AIRTEL / CARD - ALL IN ONE LINK</p>
+<div class="box"><h3>📝 REGISTER - ONLY UGX 2,500 - PAY WITH PESAPAL - DIRECT TO CEO!</h3>
+<p style="text-align:center;font-size:13px;color:#d50000;font-weight:900">PAY WITH MTN MoMo / AIRTEL / CARD - MONEY GOES DIRECT TO CEO ACCOUNT</p>
 <form onsubmit="doRegister();return false;">
 <input id="regName" placeholder="😊 Your Full Name" required>
 <input placeholder="📱 Phone / WhatsApp" required>
 <select><option>🎓 Choose Your Class</option><option>Primary P1-P7</option><option>Secondary S1-S4</option><option>A-Level S5-S6</option></select>
-<div class="pay"><b>💰 WHERE MONEY GOES - DIRECT TO CEO:</b><br>
+<div class="pay"><b>💰 WHERE MONEY GOES - DIRECT TO CEO ACCOUNT:</b><br>
 <div class="payMTN">
-<span style="font-size:30px">💳</span><br><b>PESAPAL - SECURE PAYMENT:</b><br>
+<span style="font-size:30px">💳</span><br><b>PESAPAL - SECURE PAYMENT - DIRECT TO CEO:</b><br>
 <b style="font-size:22px">2,500 UGX</b><br>Names: Dr Daniel<br>MTN: 0782779663<br>
-<p style="font-size:13px;margin:8px 0;text-align:left">1. Tap button below - Pesapal opens<br>2. Choose <b>MTN MoMo / Airtel Money / Card</b><br>3. Enter your phone, confirm payment<br>4. Money goes DIRECT to CEO</p>
-<button type="button" class="btn btn-green" style="width:100%;font-size:16px;padding:14px" onclick="openPesapal()">💳 PAY 2,500 WITH PESAPAL - TAP HERE</button>
+<p style="font-size:13px;margin:8px 0;text-align:left">1. Tap button below - Pesapal opens<br>2. Choose <b>MTN MoMo / Airtel Money / Card</b><br>3. Enter your phone, confirm payment<br>4. Money goes DIRECT to CEO Pesapal Account, then to CEO MoMo / Bank</p>
+<button type="button" class="btn btn-green" style="width:100%;font-size:16px;padding:14px" onclick="openPesapal()">💳 PAY 2,500 WITH PESAPAL - DIRECT TO CEO</button>
 <button type="button" class="btn" style="width:100%;background:#ffcc00;color:#000;margin-top:6px" onclick="openMoMoApp()">📱 HOW TO PAY - SEE STEPS</button>
-<p style="font-size:11px;margin-top:6px;color:#666">Pesapal is safe. You pay, CEO gets money instantly.</p>
+<p style="font-size:11px;margin-top:6px;color:#666">Pesapal is safe. You pay, CEO gets money directly in his Pesapal account.</p>
 </div>
-<div class="payAirtel">📱 <b>Direct MoMo:</b> 0782779663 - Dr Daniel<br><span style="font-size:12px">If Pesapal fails, send directly to this number in MoMo App.</span></div>
+<div class="payAirtel">📱 <b>Direct MoMo:</b> 0782779663 - Dr Daniel<br><span style="font-size:12px">If Pesapal fails, send directly to this number in MoMo App. Money goes DIRECT to CEO.</span></div>
 </div>
 <input placeholder="🧾 Transaction ID (From Pesapal / MoMo SMS)" required>
 <button class="btn btn-green" style="width:100%;font-size:16px">✅ I PAID 2,500 - UNLOCK ALL!</button>
@@ -113,7 +115,7 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <button class="btn" style="width:100%;background:#ff0080;color:#fff" onclick="addShare()">✅ I Shared To A Group - Click +1</button>
 <p id="shareUnlock" style="text-align:center;margin-top:8px">🔒 Share to 5 Groups to get +2 FREE</p></div>
 
-<footer><b>👑 CEO Dr Daniel</b> | Never plan to kill a dream | Pay Only 2,500 with Pesapal | MTN: 0782779663 | © 2026 Kampala</footer>
+<footer><b>👑 CEO Dr Daniel</b> | Never plan to kill a dream | Pay Only 2,500 with Pesapal DIRECT to CEO | MTN: 0782779663 | © 2026 Kampala</footer>
 
 <div id="readerModal" class="modal"><div class="readerBox">
 <h3 id="readerTitle" style="text-align:center;color:#d50000">Title</h3>
@@ -126,9 +128,25 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <button class="btn btn-red" style="width:100%;margin-top:10px" onclick="closeReader()">❌ CLOSE VIEWER</button>
 </div></div>
 
-<div id="payModal" class="modal"><div class="modalBox" style="text-align:center"><h3 style="color:#d50000">💰 PAY 2,500 WITH PESAPAL</h3><p>VIEW is FREE. Your FREE downloads finished. Pay 2,500 once with Pesapal to DOWNLOAD FOREVER.</p><div class="pay"><div class="payMTN"><b>PESAPAL: 2,500 - Dr Daniel</b><br><b>MTN / Airtel / Card</b><br><br><button class="btn btn-green" style="width:100%;padding:14px" onclick="openPesapal()">💳 PAY 2,500 WITH PESAPAL</button><p style="font-size:12px;margin-top:8px">Pesapal opens - Choose MoMo / Airtel / Card - Pay - Come back</p></div><div class="payAirtel"><b>Direct:</b> 0782779663</div></div><button class="btn btn-green" style="width:100%" onclick="paidNow()">✅ I HAVE PAID - DOWNLOAD NOW</button><br><br><button class="btn" style="width:100%;background:#ff0080;color:#fff" onclick="closePay()">❌ CANCEL</button></div></div>
+<div id="payModal" class="modal"><div class="modalBox" style="text-align:center"><h3 style="color:#d50000">💰 PAY 2,500 WITH PESAPAL - DIRECT TO CEO</h3><p>VIEW is FREE. Your FREE downloads finished. Pay 2,500 once with Pesapal DIRECT to CEO to DOWNLOAD FOREVER.</p><div class="pay"><div class="payMTN"><b>PESAPAL: 2,500 - Dr Daniel</b><br><b>MTN / Airtel / Card - DIRECT TO CEO</b><br><br><button class="btn btn-green" style="width:100%;padding:14px" onclick="openPesapal()">💳 PAY 2,500 WITH PESAPAL - DIRECT TO CEO</button><p style="font-size:12px;margin-top:8px">Pesapal opens - Choose MoMo / Airtel / Card - Pay - Come back</p></div><div class="payAirtel"><b>Direct:</b> 0782779663 - Money goes DIRECT to CEO</div></div><button class="btn btn-green" style="width:100%" onclick="paidNow()">✅ I HAVE PAID - DOWNLOAD NOW</button><br><br><button class="btn" style="width:100%;background:#ff0080;color:#fff" onclick="closePay()">❌ CANCEL</button></div></div>
 <div id="codeModal" class="modal"><div class="modalBox"><h3 style="text-align:center;color:#d50000">🔒 CEO - ENTER CODE</h3><input type="password" id="ceoCodeInput" placeholder="Enter Code"><button class="btn btn-green" style="width:100%" onclick="checkCEOCode()">✅ UNLOCK UPLOAD</button><button class="btn" style="width:100%;margin-top:6px;background:#ff0080;color:#fff" onclick="closeCode()">❌ CANCEL</button><p id="codeError" style="text-align:center;color:red;font-weight:900;display:none">❌ WRONG CODE!</p></div></div>
-<div id="uploadModal" class="modal"><div class="modalBox"><h3 style="text-align:center;color:#00a651">✅ UPLOAD CENTRE - CEO ONLY</h3><select id="upSection"><option value="Books">📚 PAGE 1 - Books</option><option value="Primary">🎓 PAGE 2 - Primary</option><option value="Secondary">🎓 PAGE 2 - Secondary</option><option value="ALevel">🎓 PAGE 2 - A-Level</option></select><select id="upSubject"></select><input id="upTitle" placeholder="File Name e.g. Biology Paper 1"><textarea id="upContent" placeholder="Short description"></textarea><input type="file" id="upFile"><p id="upFileName" style="font-size:12px;color:green;text-align:center"></p><button class="btn btn-green" style="width:100%" onclick="savePaper()">💾 SAVE YOUR FILE</button><button class="btn" style="width:100%;margin-top:6px;background:#ff0080;color:#fff" onclick="closeUpload()">❌ CLOSE</button></div></div>
+<div id="uploadModal" class="modal"><div class="modalBox"><h3 style="text-align:center;color:#00a651">✅ UPLOAD CENTRE - CEO ONLY - FILES GO TO WEBSITE</h3><p style="font-size:12px;text-align:center">HOW TO MAKE FILE VISIBLE TO EVERYONE:<br><b>OPTION 1 (EASY):</b> Upload PDF to Google Drive, copy link, paste in box below.<br><b>OPTION 2:</b> Choose file here, then also upload same file to GitHub.</p><select id="upSection"><option value="Books">📚 PAGE 1 - Books</option><option value="Primary">🎓 PAGE 2 - Primary</option><option value="Secondary">🎓 PAGE 2 - Secondary</option><option value="ALevel">🎓 PAGE 2 - A-Level</option></select><select id="upSubject"></select><input id="upTitle" placeholder="File Name e.g. Biology Paper 1"><textarea id="upContent" placeholder="Short description"></textarea><input id="upLink" placeholder="🔗 PASTE GOOGLE DRIVE LINK HERE (Best - Works for everyone instantly) - Example: https://drive.google.com/file/d/..."><input type="file" id="upFile"><p id="upFileName" style="font-size:12px;color:green;text-align:center"></p><button class="btn btn-green" style="width:100%" onclick="savePaper()">💾 SAVE YOUR FILE TO WEBSITE</button><button class="btn" style="width:100%;margin-top:6px;background:#ff0080;color:#fff" onclick="closeUpload()">❌ CLOSE</button></div></div>
+
+<script>
+function showPage(n){
+  var p1=document.getElementById("page1");
+  var p2=document.getElementById("page2");
+  var b1=document.getElementById("btnP1");
+  var b2=document.getElementById("btnP2");
+  if(p1) p1.style.display=(n===1?"block":"none");
+  if(p2) p2.style.display=(n===2?"block":"none");
+  if(b1) b1.className=(n===1?"pageActive":"pageOff");
+  if(b2) b2.className=(n===2?"pageActive":"pageOff");
+  window.scrollTo(0,0);
+}
+function openPesapal(){window.open("https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84","_blank");}
+function openMoMoApp(){alert("PAY WITH PESAPAL - 2,500 - DIRECT TO CEO\n\n1. Tap PAY WITH PESAPAL button\n2. Choose MTN MoMo / Airtel / Card\n3. Enter phone, confirm\n4. Money goes DIRECT to CEO Pesapal Account\n\nOR Direct: Send 2,500 to 0782779663 in MoMo App.\n\nThen come back and tap I HAVE PAID.");}
+</script>
 
 <script>
 try{
@@ -136,27 +154,31 @@ var CEO_CODE="0782";
 var PESAPAL_LINK="https://invoicing.pesapal.com/InvoicePay/Pay?id=40b4632b-c1a2-4369-8c28-314ea4a67e84";
 var subjects={Books:["Books"],Primary:["Maths","English","Integrated Science","Social Studies","Luganda","CRE","IRE","Art","MDD","PE","Kiswahili","ICT","Reading","Writing"],Secondary:["Biology","Physics","Chemistry","Maths","English","Geography","History","CRE","IRE","Agriculture","ICT","Luganda","Kiswahili","French","Art","Music","Entrepreneurship","Commerce","Literature","Physics Practical","Biology Practical","Chemistry Practical"],ALevel:["Biology","Chemistry","Physics","Maths","Geography","History","Economics","Literature","Divinity","Luganda","Kiswahili","French","Art","Music","Entrepreneurship","General Paper","ICT","Agriculture","CRE","Subsidiary ICT","Subsidiary Maths"]};
 var papers=[]; try{papers=JSON.parse(localStorage.getItem("dr_ceo_files")||"[]")}catch(e){papers=[]}
+// DEFAULT FILES - SO STUDENTS SEE FILES EVEN BEFORE CEO UPLOADS - EDIT THESE IN GITHUB IF YOU WANT
+if(papers.length===0){
+  papers=[
+    {section:"Books",subject:"Books",title:"Never Plan To Kill A Dream - CEO Book",content:"CEO Dr Daniel Book - Read FREE",fileName:""},
+    {section:"Secondary",subject:"Biology",title:"Biology Paper 1 - Example",content:"CEO will replace with real paper",fileName:""}
+  ];
+}
 var freeDownloads=2; try{freeDownloads=parseInt(localStorage.getItem("dr_free_dl")||"2")}catch(e){}
 var hasPaid=false; try{hasPaid=localStorage.getItem("dr_paid")==="yes"}catch(e){}
 var shares=0; try{shares=parseInt(localStorage.getItem("ceo_shares")||"0")}catch(e){}
 var sharedDone=false; try{sharedDone=localStorage.getItem("dr_shared")==="yes"}catch(e){}
 var pendingDownload=null; var currentViewIdx=null;
 function saveAll(){try{localStorage.setItem("dr_ceo_files",JSON.stringify(papers));localStorage.setItem("dr_free_dl",freeDownloads);}catch(e){}}
-function openPesapal(){window.open(PESAPAL_LINK,"_blank");}
-function openMoMoApp(){alert("PAY WITH PESAPAL - 2,500\n\n1. Tap PAY WITH PESAPAL button\n2. Choose MTN MoMo / Airtel / Card\n3. Enter phone, confirm\n4. Money goes to CEO\n\nOR Direct: Send 2,500 to 0782779663 in MoMo App.\n\nThen come back and tap I HAVE PAID.");}
-function showPage(n){document.getElementById("page1").style.display=n===1?"block":"none";document.getElementById("page2").style.display=n===2?"block":"none";document.getElementById("btnP1").className=n===1?"pageActive":"pageOff";document.getElementById("btnP2").className=n===2?"pageActive":"pageOff";window.scrollTo(0,0);}
 function updateStatus(){var bar=document.getElementById("statusBar");var sc=document.getElementById("shareCount");if(sc) sc.innerText="Shares: "+shares+" / 5 Groups";if(hasPaid) bar.innerHTML="✅ PAID 2,500 - DOWNLOAD + VIEW FREELY FOREVER";else bar.innerHTML="🎁 FREE DOWNLOADS LEFT: "+freeDownloads+" | 👀 VIEW FREE FOR ALL";var su=document.getElementById("shareUnlock");if(su&&sharedDone) su.innerHTML="🎉 +2 FREE ADDED!";}
-function folderHTML(section,filter){var list=subjects[section];var html="";for(var i=0;i<list.length;i++){var subj=list[i];var filesIn=[];for(var j=0;j<papers.length;j++){if(papers[j].section===section&&papers[j].subject===subj) filesIn.push(papers[j]);}var cards="";if(filesIn.length===0){cards='<div class="doc"><b>No files yet</b><p>CEO will upload '+subj+' soon.</p><button class="btn btn-blue" onclick="alert(\'CEO will upload soon\')">👀 VIEW</button></div>';}else{for(var k=0;k<filesIn.length;k++){var p=filesIn[k];var idx=papers.indexOf(p);cards+='<div class="doc"><b>'+p.title+'</b><p>'+p.subject+' - CEO File - '+(p.fileName||"")+'<br>👀 Downloader can VIEW too - FREE</p><button class="btn btn-blue" style="width:100%;font-size:15px;padding:12px" onclick="openReader('+idx+')">👀 VIEW / OPEN DOCUMENT - FREE FOR ALL</button><button class="btn btn-green" style="width:100%;margin-top:6px" onclick="tryDownload('+idx+')">⬇️ DOWNLOAD - You Can VIEW Too</button></div>';}}if(filter&&subj.toLowerCase().indexOf(filter)===-1&&cards.toLowerCase().indexOf(filter)===-1) continue;html+='<div class="folder" onclick="toggleFolder(this)"><b>📂 '+subj+'</b><span> - Tap to open</span><div>'+cards+'</div></div>';}return html;}
+function folderHTML(section,filter){var list=subjects[section];var html="";for(var i=0;i<list.length;i++){var subj=list[i];var filesIn=[];for(var j=0;j<papers.length;j++){if(papers[j].section===section&&papers[j].subject===subj) filesIn.push(papers[j]);}var cards="";if(filesIn.length===0){cards='<div class="doc"><b>No files yet</b><p>CEO will upload '+subj+' soon.</p><button class="btn btn-blue" onclick="alert(\'CEO will upload soon\')">👀 VIEW</button></div>';}else{for(var k=0;k<filesIn.length;k++){var p=filesIn[k];var idx=papers.indexOf(p);var link=p.fileLink||p.fileName||"";cards+='<div class="doc"><b>'+p.title+'</b><p>'+p.subject+' - CEO File<br>👀 Everyone can VIEW FREE</p><button class="btn btn-blue" style="width:100%;font-size:15px;padding:12px" onclick="openReader('+idx+')">👀 VIEW / OPEN DOCUMENT - FREE FOR ALL</button><button class="btn btn-green" style="width:100%;margin-top:6px" onclick="tryDownload('+idx+')">⬇️ DOWNLOAD - You Can VIEW Too</button></div>';}}if(filter&&subj.toLowerCase().indexOf(filter)===-1&&cards.toLowerCase().indexOf(filter)===-1) continue;html+='<div class="folder" onclick="toggleFolder(this)"><b>📂 '+subj+'</b><span> - Tap to open</span><div>'+cards+'</div></div>';}return html;}
 function toggleFolder(el){var ps=el.querySelectorAll(".doc");for(var i=0;i<ps.length;i++) ps[i].classList.toggle("show");}
 function renderAll(filter){var f=(filter||"").toLowerCase();document.getElementById("booksList").innerHTML=folderHTML("Books",f);document.getElementById("primaryList").innerHTML=folderHTML("Primary",f);document.getElementById("secondaryList").innerHTML=folderHTML("Secondary",f);document.getElementById("alevelList").innerHTML=folderHTML("ALevel",f);}
 function doSearch(){renderAll(document.getElementById("searchInput").value);}
 function tryDownload(idx){if(hasPaid){doDownload(idx);return;}if(freeDownloads>0){freeDownloads--;saveAll();updateStatus();doDownload(idx);}else{pendingDownload=idx;document.getElementById("payModal").style.display="block";}}
-function doDownload(idx){var paper=papers[idx];if(!paper||!paper.fileName){alert("CEO file coming soon. Please VIEW other files.");return;}var a=document.createElement("a");a.href=paper.fileName;a.download=paper.fileName;a.target="_blank";document.body.appendChild(a);a.click();a.remove();openReader(idx);}
+function doDownload(idx){var paper=papers[idx];if(!paper) return;var link=paper.fileLink||paper.fileName||"";if(!link){alert("CEO file coming soon. Please VIEW other files. CEO: Add Google Drive link in Upload Centre.");return;}window.open(link,"_blank");openReader(idx);}
 function tryDownloadCurrent(){if(currentViewIdx!==null) tryDownload(currentViewIdx);}
-function openReader(idx){var p=papers[idx];if(!p) return;currentViewIdx=idx;document.getElementById("readerTitle").innerText=p.title;var file=p.fileName||"";var btn=document.getElementById("viewFullBtn");btn.href=file?file:"#";var box=document.getElementById("readerContent");var low=file.toLowerCase();if(!file){box.innerHTML="<p>No file attached yet. CEO will upload soon.</p><p>"+(p.content||"")+"</p>";}else if(low.endsWith(".pdf")){box.innerHTML='<iframe src="'+file+'"></iframe><p style="text-align:center;margin-top:8px">If PDF does not show, tap OPEN FULL SCREEN VIEW above.<br>File: '+file+'</p><p>'+(p.content||"")+'</p>';}else if(low.endsWith(".jpg")||low.endsWith(".jpeg")||low.endsWith(".png")||low.endsWith(".webp")||low.endsWith(".gif")){box.innerHTML='<img src="'+file+'" style="width:100%;border-radius:10px"><p>'+(p.content||"")+'</p>';}else{box.innerHTML='<p>Tap OPEN FULL SCREEN VIEW to view this file.</p><p>File: '+file+'</p><p>'+(p.content||"")+'</p><a class="btn btn-blue" style="display:block;text-align:center" href="'+file+'" target="_blank">👀 OPEN DOCUMENT</a>';}document.getElementById("readerModal").style.display="block";}
+function openReader(idx){var p=papers[idx];if(!p) return;currentViewIdx=idx;document.getElementById("readerTitle").innerText=p.title;var file=p.fileLink||p.fileName||"";var btn=document.getElementById("viewFullBtn");btn.href=file?file:"#";var box=document.getElementById("readerContent");var low=file.toLowerCase();if(!file){box.innerHTML="<p>No file attached yet. CEO will upload soon. CEO: Add Google Drive link in Upload Centre.</p><p>"+(p.content||"")+"</p>";}else if(low.indexOf("drive.google")!==-1){var fid="";var m=file.match(/\/d\/([^\/]+)/);if(m) fid=m[1];var preview=fid?"https://drive.google.com/file/d/"+fid+"/preview":"";box.innerHTML='<iframe src="'+preview+'"></iframe><p style="text-align:center;margin-top:8px">Google Drive File - If not showing, tap OPEN FULL SCREEN VIEW.<br>'+(p.content||"")+'</p>';}else if(low.endsWith(".pdf")){box.innerHTML='<iframe src="'+file+'"></iframe><p style="text-align:center;margin-top:8px">If PDF does not show, tap OPEN FULL SCREEN VIEW above.<br>File: '+file+'</p><p>'+(p.content||"")+'</p>';}else if(low.endsWith(".jpg")||low.endsWith(".jpeg")||low.endsWith(".png")||low.endsWith(".webp")||low.endsWith(".gif")){box.innerHTML='<img src="'+file+'" style="width:100%;border-radius:10px"><p>'+(p.content||"")+'</p>';}else{box.innerHTML='<p>Tap OPEN FULL SCREEN VIEW to view this file.</p><p>File: '+file+'</p><p>'+(p.content||"")+'</p><a class="btn btn-blue" style="display:block;text-align:center" href="'+file+'" target="_blank">👀 OPEN DOCUMENT</a>';}document.getElementById("readerModal").style.display="block";}
 function closeReader(){document.getElementById("readerModal").style.display="none";}
 function closePay(){document.getElementById("payModal").style.display="none";}
-function paidNow(){document.getElementById("payModal").style.display="none";hasPaid=true;try{localStorage.setItem("dr_paid","yes")}catch(e){}updateStatus();alert("✅ PAID WITH PESAPAL! Now DOWNLOAD + VIEW FREELY!");if(pendingDownload!==null){doDownload(pendingDownload);pendingDownload=null;}}
+function paidNow(){document.getElementById("payModal").style.display="none";hasPaid=true;try{localStorage.setItem("dr_paid","yes")}catch(e){}updateStatus();alert("✅ PAID WITH PESAPAL DIRECT TO CEO! Now DOWNLOAD + VIEW FREELY!");if(pendingDownload!==null){doDownload(pendingDownload);pendingDownload=null;}}
 function doRegister(){hasPaid=true;try{localStorage.setItem("dr_paid","yes")}catch(e){}updateStatus();alert("🎉 Thank you "+document.getElementById("regName").value+"! REGISTERED! Now DOWNLOAD + VIEW FREE!");}
 function addShare(){if(sharedDone){alert("Already used!");return;}shares++;try{localStorage.setItem("ceo_shares",shares)}catch(e){}if(shares>=5){freeDownloads+=2;sharedDone=true;try{localStorage.setItem("dr_shared","yes")}catch(e){}saveAll();alert("🎉 Shared to 5 Groups! +2 FREE! Now "+freeDownloads);}else alert("Thank you! "+shares+"/5");updateStatus();}
 function openCode(){document.getElementById("codeModal").style.display="block";document.getElementById("codeError").style.display="none";document.getElementById("ceoCodeInput").value="";}
@@ -165,8 +187,8 @@ function checkCEOCode(){var v=document.getElementById("ceoCodeInput").value.trim
 function closeUpload(){document.getElementById("uploadModal").style.display="none";}
 function fillUpSubjects(){var sec=document.getElementById("upSection").value;var sel=document.getElementById("upSubject");sel.innerHTML="";for(var i=0;i<subjects[sec].length;i++){var o=document.createElement("option");o.text=subjects[sec][i];sel.appendChild(o);}}
 document.getElementById("upSection").addEventListener("change",fillUpSubjects);
-document.getElementById("upFile").addEventListener("change",function(){var f=this.files[0];if(f) document.getElementById("upFileName").innerText="📎 Your File: "+f.name;});
-function savePaper(){var sec=document.getElementById("upSection").value;var s=document.getElementById("upSubject").value;var t=document.getElementById("upTitle").value.trim();var c=document.getElementById("upContent").value.trim();var f=document.getElementById("upFile").files[0];if(!t){alert("Fill Title CEO!");return;}if(!f){alert("Attach YOUR file CEO!");return;}papers.unshift({section:sec,subject:s,title:t,content:c||"",fileName:f.name});saveAll();closeUpload();renderAll("");updateStatus();alert("✅ SAVED! "+t+" is now LIVE in "+sec+" > "+s+". Upload "+f.name+" to GitHub too.");if(sec==="Books") showPage(1); else showPage(2);}
+document.getElementById("upFile").addEventListener("change",function(){var f=this.files[0];if(f) document.getElementById("upFileName").innerText="📎 Your File: "+f.name+" - Remember: Also upload this file to GitHub OR use Drive link above for everyone to see it.";});
+function savePaper(){var sec=document.getElementById("upSection").value;var s=document.getElementById("upSubject").value;var t=document.getElementById("upTitle").value.trim();var c=document.getElementById("upContent").value.trim();var link=document.getElementById("upLink").value.trim();var f=document.getElementById("upFile").files[0];if(!t){alert("Fill Title CEO!");return;}if(!link&&!f){alert("CEO: Paste Google Drive Link OR Choose a File! Drive Link is best - works for everyone instantly.");return;}var finalLink=link||(f?f.name:"");papers.unshift({section:sec,subject:s,title:t,content:c||"",fileName:finalLink,fileLink:finalLink});saveAll();closeUpload();renderAll("");updateStatus();if(link){alert("✅ SAVED TO WEBSITE! "+t+" is now LIVE in "+sec+" > "+s+". Drive link works for EVERYONE instantly.");}else{alert("✅ SAVED! "+t+" is now LIVE. IMPORTANT: Upload "+f.name+" to GitHub too, or students will not see the file. Better: Use Drive Link next time.");}if(sec==="Books") showPage(1); else showPage(2);}
 updateStatus();renderAll("");fillUpSubjects();
 setInterval(function(){var el=document.getElementById("bookSlide");if(el){el.scrollLeft+=170;if(el.scrollLeft+el.clientWidth>=el.scrollWidth) el.scrollLeft=0;}},2500);
 }catch(e){alert("Site loaded: "+e.message);}
