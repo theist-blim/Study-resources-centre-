@@ -7,7 +7,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#fff5f5;color:#222}
-header{background:#d50000;color:#fff;text-align:center;padding:18px 12px;border-bottom:5px solid #ffcc00}
+header{background:#d50000;color:#fff;text-align:center;padding:18px 12px;border-bottom:5px solid #ffcc00;position:relative}
 .top{max-width:650px;margin:0 auto;padding:16px;text-align:center;background:#fff}
 .top img{width:120px;height:120px;object-fit:cover;border-radius:50%;border:5px solid #ffcc00;background:#fff}
 .btn{display:inline-block;padding:10px 16px;border-radius:25px;font-weight:900;text-decoration:none;font-size:13px;margin:4px;border:none;cursor:pointer}
@@ -29,14 +29,15 @@ header{background:#d50000;color:#fff;text-align:center;padding:18px 12px;border-
 .doc.show{display:block}
 input,select{width:100%;padding:11px;margin:6px 0;border:2px solid #ffcc00;border-radius:12px;background:#fffde7}
 .pay{border:3px dashed #d50000;border-radius:14px;padding:12px;text-align:center;background:#fff0f0}
-.payMTN{background:#e8f5e9;border:2px solid #00a651;border-radius:12px;padding:10px;margin:6px 0}
+.payMTN{background:#fffde7;border:3px solid #ffcc00;border-radius:12px;padding:12px;margin:6px 0}
 .payAirtel{background:#f5f5f5;border:2px dashed #999;border-radius:12px;padding:10px;margin:6px 0;color:#666}
 .share-btn{display:block;text-align:center;padding:11px;margin:6px 0;border-radius:14px;color:#fff;font-weight:900;text-decoration:none}
 .wa{background:#25D366}.fb{background:#1877F2}.tw{background:#000}.ig{background:#d62976}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:999;overflow:auto;padding:15px}
 .modalBox{background:#fff;border-radius:18px;padding:18px;max-width:450px;margin:30px auto}
-.readerBox{background:#fff;border-radius:18px;padding:15px;max-width:540px;margin:15px auto}
-.readerContent{background:#fffde7;border:2px solid #ffca28;border-radius:12px;padding:15px;height:300px;overflow-y:auto;white-space:pre-wrap}
+.readerBox{background:#fff;border-radius:18px;padding:15px;max-width:650px;margin:15px auto;min-height:80vh}
+.readerContent{background:#fffde7;border:2px solid #ffca28;border-radius:12px;padding:10px;height:520px;overflow-y:auto}
+.readerContent iframe{width:100%;height:480px;border:none;background:#fff}
 footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px solid #ffcc00}
 </style>
 </head>
@@ -47,8 +48,8 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <div class="top">
 <img src="profile.jpg" onerror="this.src='https://via.placeholder.com/120/d50000/ffffff?text=DR'">
 <h2>CEO Dr Daniel - Welcome!</h2>
-<p><b>KEY:</b> Pay ONLY <b>UGX 2,500</b> for Registration. After you Register, <b>DOWNLOAD EVERYTHING FOR FREE!</b></p>
-<p id="statusBar" style="background:#ffcc00;padding:8px;border-radius:12px;font-weight:900;margin-top:8px">🎁 FREE DOWNLOADS LEFT: 2</p>
+<p><b>KEY:</b> Pay ONLY <b>UGX 2,500</b> with <b>Pesapal - MTN / Airtel / Card</b>. After you Register, <b>DOWNLOAD + VIEW EVERYTHING!</b><br><b>VIEW IS FREE FOR EVERYONE!</b></p>
+<p id="statusBar" style="background:#ffcc00;padding:8px;border-radius:12px;font-weight:900;margin-top:8px">🎁 FREE DOWNLOADS LEFT: 2 | 👀 VIEW FREE FOR ALL</p>
 <a class="btn btn-yellow" href="#" onclick="showPage(1);return false;">📚 PAGE 1 - Books</a>
 <a class="btn btn-red" href="#" onclick="showPage(2);return false;">🎓 PAGE 2 - Levels</a>
 </div>
@@ -71,83 +72,11 @@ footer{background:#000;color:#fff;text-align:center;padding:16px;border-top:5px 
 <div id="page1">
 <div class="box"><h3>📚 MY BOOKS - BOOKS FITTED IN THEIR SECTION</h3>
 <img src="books.jpg" style="width:100%;height:130px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00;background:#fff0f0">
-<p style="text-align:center;font-size:12px">Tap folder to see files CEO uploaded.</p><div id="booksList"></div></div>
+<p style="text-align:center;font-size:12px">Tap folder. Tap VIEW to read FREE. Tap DOWNLOAD to download.</p><div id="booksList"></div></div>
 <div class="box"><h3>🎓 MY CLASS - STUDENTS</h3><img src="students.jpg" style="width:100%;height:110px;object-fit:cover;border-radius:12px;border:2px solid #ffcc00"><p>✅ 1000+ Students Already Learning!</p><a class="btn btn-yellow" href="#" onclick="showPage(2);return false;" style="width:100%;text-align:center">🚀 Go To Levels - PAGE 2</a></div>
-<div class="box"><h3>🎁 2 FILES FREE FOR EVERYONE!</h3><p>Tap any subject, open folder, download CEO file.</p></div>
+<div class="box"><h3>👀 VIEW + DOWNLOAD - FOR EVERYONE WHO DOWNLOADS</h3><p>Anyone who downloads can also VIEW the paper. Anyone can VIEW FREE. Download needs 2 FREE or Pay 2,500 with Pesapal.</p></div>
 </div>
 
 <div id="page2" style="display:none">
-<div class="box"><h3>🎓 LEVELS - TAP SUBJECT TO OPEN, SEE CEO FILES INSIDE</h3><p style="text-align:center;font-size:12px">No download on subject. Download ONLY on CEO files inside.</p>
-<div class="levelTitle">🌈 PRIMARY P1-P7 - ALL SUBJECTS</div><div id="primaryList"></div>
-<div class="levelTitle">🧪 SECONDARY S1-S4 - ALL SUBJECTS</div><div id="secondaryList"></div>
-<div class="levelTitle">🎓 A-LEVEL S5-S6 - ALL SUBJECTS</div><div id="alevelList"></div>
-</div></div>
-
-<div class="box"><h3>📝 REGISTER - ONLY UGX 2,500!</h3>
-<form onsubmit="doRegister();return false;">
-<input id="regName" placeholder="😊 Your Full Name" required>
-<input placeholder="📱 Phone / WhatsApp" required>
-<select><option>🎓 Choose Your Class</option><option>Primary P1-P7</option><option>Secondary S1-S4</option><option>A-Level S5-S6</option></select>
-<div class="pay"><b>💰 WHERE MONEY GOES - DIRECT TO CEO:</b><br>
-<div class="payMTN">📱 <b>MTN MoMo - DIRECT PAY:</b><br><b style="font-size:20px">0782779663</b><br>Names: Dr Daniel<br>Amount: <b>2,500 UGX</b><br><br>
-<a href="tel:*165*3*0782779663*2500%23" style="display:block;background:#00a651;color:#fff;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">📱 TAP HERE - PAY MTN 2,500 INSTANTLY</a></div>
-<div class="payAirtel">📱 <b>Airtel Money:</b><br><b>Coming Soon</b><br><span style="font-size:12px">CEO will send Airtel later. Use MTN for now.</span></div>
-</div>
-<input placeholder="🧾 Transaction ID (2,500 Paid)" required>
-<button class="btn btn-green" style="width:100%;font-size:16px">✅ I PAID 2,500 - UNLOCK ALL!</button>
-</form></div>
-
-<div class="box"><h3>🔗 SHARE & GET +2 FREE!</h3><p id="shareCount" style="text-align:center;font-weight:900;color:#d50000">Shares: 0 / 5 Groups</p>
-<a class="share-btn wa" href="https://wa.me/?text=Join%20CEO%20Dr%20Daniel%20-%20Pay%202500%20Only%20Then%20Download%20All%20FREE!" target="_blank" onclick="addShare()">📱 Share on WhatsApp</a>
-<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" onclick="addShare()">📘 Share on Facebook</a>
-<a class="share-btn tw" href="https://twitter.com/intent/tweet?text=CEO%20Dr%20Daniel" target="_blank" onclick="addShare()">𝕏 Share on X</a>
-<a class="share-btn ig" href="https://www.instagram.com/" target="_blank" onclick="addShare()">📸 Share on Instagram</a>
-<button class="btn" style="width:100%;background:#ff0080;color:#fff" onclick="addShare()">✅ I Shared To A Group - Click +1</button>
-<p id="shareUnlock" style="text-align:center;margin-top:8px">🔒 Share to 5 Groups to get +2 FREE</p></div>
-
-<footer><b>👑 CEO Dr Daniel</b> | Never plan to kill a dream | Pay Only 2,500 | MTN: 0782779663 | © 2026 Kampala</footer>
-
-<div id="readerModal" class="modal"><div class="readerBox"><h3 id="readerTitle" style="text-align:center;color:#d50000">Title</h3><div class="readerContent" id="readerContent"></div><button class="btn btn-red" style="width:100%;margin-top:10px" onclick="closeReader()">❌ CLOSE</button></div></div>
-<div id="payModal" class="modal"><div class="modalBox" style="text-align:center"><h3 style="color:#d50000">💰 PAY 2,500 TO CONTINUE</h3><p>Your FREE finished. Pay 2,500 once.</p><div class="pay"><div class="payMTN"><b>MTN: 0782779663 - Dr Daniel</b><br><br><a href="tel:*165*3*0782779663*2500%23" style="display:block;background:#00a651;color:#fff;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">📱 PAY MTN 2,500 NOW</a></div><div class="payAirtel"><b>Airtel:</b> Coming Soon</div></div><button class="btn btn-green" style="width:100%" onclick="paidNow()">✅ I HAVE PAID</button><br><br><button class="btn" style="width:100%;background:#ff0080;color:#fff" onclick="closePay()">❌ CANCEL</button></div></div>
-<div id="codeModal" class="modal"><div class="modalBox"><h3 style="text-align:center;color:#d50000">🔒 CEO - ENTER CODE</h3><input type="password" id="ceoCodeInput" placeholder="Enter Code"><button class="btn btn-green" style="width:100%" onclick="checkCEOCode()">✅ UNLOCK UPLOAD</button><button class="btn" style="width:100%;margin-top:6px;background:#ff0080;color:#fff" onclick="closeCode()">❌ CANCEL</button><p id="codeError" style="text-align:center;color:red;font-weight:900;display:none">❌ WRONG CODE!</p></div></div>
-<div id="uploadModal" class="modal"><div class="modalBox"><h3 style="text-align:center;color:#00a651">✅ UPLOAD CENTRE - CEO ONLY</h3><select id="upSection"><option value="Books">📚 PAGE 1 - Books</option><option value="Primary">🎓 PAGE 2 - Primary</option><option value="Secondary">🎓 PAGE 2 - Secondary</option><option value="ALevel">🎓 PAGE 2 - A-Level</option></select><select id="upSubject"></select><input id="upTitle" placeholder="File Name e.g. Biology Paper 1"><textarea id="upContent" placeholder="Short description"></textarea><input type="file" id="upFile"><p id="upFileName" style="font-size:12px;color:green;text-align:center"></p><button class="btn btn-green" style="width:100%" onclick="savePaper()">💾 SAVE YOUR FILE</button><button class="btn" style="width:100%;margin-top:6px;background:#ff0080;color:#fff" onclick="closeUpload()">❌ CLOSE</button></div></div>
-
-<script>
-try{
-var CEO_CODE="0782";
-var subjects={Books:["Books"],Primary:["Maths","English","Integrated Science","Social Studies","Luganda","CRE","IRE","Art","MDD","PE","Kiswahili","ICT","Reading","Writing"],Secondary:["Biology","Physics","Chemistry","Maths","English","Geography","History","CRE","IRE","Agriculture","ICT","Luganda","Kiswahili","French","Art","Music","Entrepreneurship","Commerce","Literature","Physics Practical","Biology Practical","Chemistry Practical"],ALevel:["Biology","Chemistry","Physics","Maths","Geography","History","Economics","Literature","Divinity","Luganda","Kiswahili","French","Art","Music","Entrepreneurship","General Paper","ICT","Agriculture","CRE","Subsidiary ICT","Subsidiary Maths"]};
-var papers=[]; try{papers=JSON.parse(localStorage.getItem("dr_ceo_files")||"[]")}catch(e){papers=[]}
-var freeDownloads=2; try{freeDownloads=parseInt(localStorage.getItem("dr_free_dl")||"2")}catch(e){}
-var hasPaid=false; try{hasPaid=localStorage.getItem("dr_paid")==="yes"}catch(e){}
-var shares=0; try{shares=parseInt(localStorage.getItem("ceo_shares")||"0")}catch(e){}
-var sharedDone=false; try{sharedDone=localStorage.getItem("dr_shared")==="yes"}catch(e){}
-var pendingDownload=null;
-function saveAll(){try{localStorage.setItem("dr_ceo_files",JSON.stringify(papers));localStorage.setItem("dr_free_dl",freeDownloads);}catch(e){}}
-function showPage(n){document.getElementById("page1").style.display=n===1?"block":"none";document.getElementById("page2").style.display=n===2?"block":"none";document.getElementById("btnP1").className=n===1?"pageActive":"pageOff";document.getElementById("btnP2").className=n===2?"pageActive":"pageOff";window.scrollTo(0,0);}
-function updateStatus(){var bar=document.getElementById("statusBar");var sc=document.getElementById("shareCount");if(sc) sc.innerText="Shares: "+shares+" / 5 Groups";if(hasPaid) bar.innerHTML="✅ PAID 2,500 - DOWNLOAD FREELY FOREVER";else bar.innerHTML="🎁 FREE DOWNLOADS LEFT: "+freeDownloads;var su=document.getElementById("shareUnlock");if(su&&sharedDone) su.innerHTML="🎉 +2 FREE ADDED!";}
-function folderHTML(section,filter){var list=subjects[section];var html="";for(var i=0;i<list.length;i++){var subj=list[i];var filesIn=[];for(var j=0;j<papers.length;j++){if(papers[j].section===section&&papers[j].subject===subj) filesIn.push(papers[j]);}var cards="";if(filesIn.length===0){cards='<div class="doc"><b>No files yet</b><p>CEO will upload '+subj+' soon.</p><button class="btn btn-blue" onclick="alert(\'CEO will upload soon\')">👀 SEE</button></div>';}else{for(var k=0;k<filesIn.length;k++){var p=filesIn[k];var idx=papers.indexOf(p);cards+='<div class="doc"><b>'+p.title+'</b><p>'+p.subject+' - CEO File - '+(p.fileName||"")+'</p><button class="btn btn-green" onclick="tryDownload('+idx+')">⬇️ DOWNLOAD</button> <button class="btn btn-blue" onclick="openReader('+idx+')">👀 SEE</button></div>';}}if(filter&&subj.toLowerCase().indexOf(filter)===-1&&cards.toLowerCase().indexOf(filter)===-1) continue;html+='<div class="folder" onclick="toggleFolder(this)"><b>📂 '+subj+'</b><span> - Tap to open</span><div>'+cards+'</div></div>';}return html;}
-function toggleFolder(el){var ps=el.querySelectorAll(".doc");for(var i=0;i<ps.length;i++) ps[i].classList.toggle("show");}
-function renderAll(filter){var f=(filter||"").toLowerCase();document.getElementById("booksList").innerHTML=folderHTML("Books",f);document.getElementById("primaryList").innerHTML=folderHTML("Primary",f);document.getElementById("secondaryList").innerHTML=folderHTML("Secondary",f);document.getElementById("alevelList").innerHTML=folderHTML("ALevel",f);}
-function doSearch(){renderAll(document.getElementById("searchInput").value);}
-function tryDownload(idx){if(hasPaid){doDownload(idx);return;}if(freeDownloads>0){freeDownloads--;saveAll();updateStatus();doDownload(idx);}else{pendingDownload=idx;document.getElementById("payModal").style.display="block";}}
-function doDownload(idx){var paper=papers[idx];if(!paper||!paper.fileName){alert("CEO file coming soon.");return;}var a=document.createElement("a");a.href=paper.fileName;a.download=paper.fileName;a.target="_blank";document.body.appendChild(a);a.click();a.remove();openReader(idx);}
-function openReader(idx){var p=papers[idx];if(!p) return;document.getElementById("readerTitle").innerText=p.title;document.getElementById("readerContent").innerText=(p.content||"")+"\n\nFILE: "+(p.fileName||"No file");document.getElementById("readerModal").style.display="block";}
-function closeReader(){document.getElementById("readerModal").style.display="none";}
-function closePay(){document.getElementById("payModal").style.display="none";}
-function paidNow(){document.getElementById("payModal").style.display="none";hasPaid=true;try{localStorage.setItem("dr_paid","yes")}catch(e){}updateStatus();alert("✅ PAID! Now DOWNLOAD FREELY!");if(pendingDownload!==null){doDownload(pendingDownload);pendingDownload=null;}}
-function doRegister(){hasPaid=true;try{localStorage.setItem("dr_paid","yes")}catch(e){}updateStatus();alert("🎉 Thank you "+document.getElementById("regName").value+"! REGISTERED! Now DOWNLOAD FREE!");}
-function addShare(){if(sharedDone){alert("Already used!");return;}shares++;try{localStorage.setItem("ceo_shares",shares)}catch(e){}if(shares>=5){freeDownloads+=2;sharedDone=true;try{localStorage.setItem("dr_shared","yes")}catch(e){}saveAll();alert("🎉 Shared to 5 Groups! +2 FREE! Now "+freeDownloads);}else alert("Thank you! "+shares+"/5");updateStatus();}
-function openCode(){document.getElementById("codeModal").style.display="block";document.getElementById("codeError").style.display="none";document.getElementById("ceoCodeInput").value="";}
-function closeCode(){document.getElementById("codeModal").style.display="none";}
-function checkCEOCode(){var v=document.getElementById("ceoCodeInput").value.trim();if(v===CEO_CODE){document.getElementById("codeModal").style.display="none";document.getElementById("uploadModal").style.display="block";fillUpSubjects();}else{document.getElementById("codeError").style.display="block";}}
-function closeUpload(){document.getElementById("uploadModal").style.display="none";}
-function fillUpSubjects(){var sec=document.getElementById("upSection").value;var sel=document.getElementById("upSubject");sel.innerHTML="";for(var i=0;i<subjects[sec].length;i++){var o=document.createElement("option");o.text=subjects[sec][i];sel.appendChild(o);}}
-document.getElementById("upSection").addEventListener("change",fillUpSubjects);
-document.getElementById("upFile").addEventListener("change",function(){var f=this.files[0];if(f) document.getElementById("upFileName").innerText="📎 Your File: "+f.name;});
-function savePaper(){var sec=document.getElementById("upSection").value;var s=document.getElementById("upSubject").value;var t=document.getElementById("upTitle").value.trim();var c=document.getElementById("upContent").value.trim();var f=document.getElementById("upFile").files[0];if(!t){alert("Fill Title CEO!");return;}if(!f){alert("Attach YOUR file CEO!");return;}papers.unshift({section:sec,subject:s,title:t,content:c||"",fileName:f.name});saveAll();closeUpload();renderAll("");updateStatus();alert("✅ SAVED! "+t+" is now LIVE in "+sec+" > "+s+". Upload "+f.name+" to GitHub too.");if(sec==="Books") showPage(1); else showPage(2);}
-updateStatus();renderAll("");fillUpSubjects();
-setInterval(function(){var el=document.getElementById("bookSlide");if(el){el.scrollLeft+=170;if(el.scrollLeft+el.clientWidth>=el.scrollWidth) el.scrollLeft=0;}},2500);
-}catch(e){alert("Site loaded, but small error: "+e.message);}
-</script>
-</body>
-                                                               </html>
+<div class="box"><h3>🎓 LEVELS - TAP SUBJECT TO OPEN, SEE CEO FILES INSIDE</h3><p style="text-align:center;font-size:12px">Tap VIEW to read FREE. Tap DOWNLOAD to download. Downloader can also VIEW.</p>
+<div class="levelTitle">🌈 PRIMARY P1-P7
