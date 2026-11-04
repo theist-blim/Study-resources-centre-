@@ -11,6 +11,19 @@ body{background:#fff0f5;padding:10px;padding-bottom:80px}
 .header h1{font-size:22px}
 .header p{font-size:13px;margin-top:4px}
 .secret{position:absolute;top:5px;right:8px;width:40px;height:40px;opacity:0.01;cursor:pointer;z-index:10}
+/* ✅ PROFILE */
+.profile{background:white;border-radius:15px;padding:12px;margin:12px 0;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.profile img{width:70px;height:70px;border-radius:50%;border:3px solid #ff1744;object-fit:cover;background:#ffe0e6}
+.profile h2{font-size:18px;color:#ff1744}
+.profile p{font-size:12px;color:#555;line-height:1.4}
+/* ✅ SLIDE SHOWS BOOKS */
+.slideWrap{background:white;border-radius:15px;padding:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.slideWrap h3{color:#ff1744;font-size:15px;margin-bottom:8px;text-align:center}
+.slides{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:5px}
+.book{min-width:130px;background:#fff8fa;border:2px solid #ffd1dc;border-radius:12px;padding:10px;text-align:center;scroll-snap-align:start}
+.book .cover{font-size:35px}
+.book b{font-size:13px;display:block;margin:5px 0 2px}
+.book span{font-size:11px;color:#666}
 .searchBox{margin:12px 0}
 .searchBox input{width:100%;padding:14px;border:3px solid #ff1744;border-radius:30px;font-size:16px;outline:none;text-align:center}
 .status{background:white;border:2px solid #ff1744;border-radius:12px;padding:10px;text-align:center;font-weight:900;font-size:13px;margin-bottom:12px}
@@ -44,6 +57,29 @@ body{background:#fff0f5;padding:10px;padding-bottom:80px}
   <p>INFORMATION CENTRE • ONE PAGE • SEE • DOWNLOAD • READ</p>
 </div>
 
+<!-- ✅ 1. PROFILE OF CEO - NOT MISSING AGAIN -->
+<div class="profile">
+  <img id="ceoPic" src="https://via.placeholder.com/70/ff1744/ffffff?text=DR" alt="CEO Dr Daniel">
+  <div>
+    <h2>CEO Dr Daniel</h2>
+    <p>👨‍⚕️ Founder & CEO - Information Centre<br>📚 Biology • Physics • Maths • Virus • Chemistry<br>📍 Uganda • Doctrine Code Protected</p>
+  </div>
+</div>
+
+<!-- ✅ 2. SLIDE SHOWS THE BOOKS -->
+<div class="slideWrap">
+  <h3>📚 SLIDE - OUR BOOKS - SWIPE ➡️</h3>
+  <div class="slides" id="bookSlide">
+    <div class="book"><div class="cover">📗</div><b>Biology Paper 1</b><span>Cells • Life</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Biology')">OPEN</button></div>
+    <div class="book"><div class="cover">📘</div><b>Physics Paper 1</b><span>Motion • Force</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Physics')">OPEN</button></div>
+    <div class="book"><div class="cover">📙</div><b>Maths Paper 1</b><span>Numbers</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Maths')">OPEN</button></div>
+    <div class="book"><div class="cover">🦠</div><b>Virus Book</b><span>What You Must Know</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Virus')">OPEN</button></div>
+    <div class="book"><div class="cover">🧪</div><b>Chemistry</b><span>Elements</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('Chemistry')">OPEN</button></div>
+    <div class="book"><div class="cover">📚</div><b>General</b><span>All Info</span><br><button class="btn btn-green" style="margin-top:6px" onclick="searchFor('')">OPEN</button></div>
+  </div>
+  <p style="text-align:center;font-size:11px;color:#888;margin-top:6px">Swipe slide to see all books ➡️</p>
+</div>
+
 <div class="searchBox">
   <input type="text" id="searchInput" oninput="doSearch()" placeholder="🔍 SEARCH HERE... Physics, Biology, Maths, Virus">
 </div>
@@ -54,40 +90,28 @@ body{background:#fff0f5;padding:10px;padding-bottom:80px}
   <button class="btn btn-blue" onclick="shareToUnlock()">📤 SHARE TO 5 GROUPS = +2 FREE DOWNLOADS</button>
 </div>
 
-<!-- ✅ ALL INFORMATION IN ONE PAGE -->
 <div id="allPapers"></div>
 
-<!-- READER -->
 <div id="readerModal" class="modal">
   <div class="readerBox">
     <h3 id="readerTitle" style="text-align:center;color:#ff1744">Title</h3>
     <p style="text-align:center;font-size:12px;color:#666">ROLL UP / ROLL DOWN TO READ • SHORT & EASY</p>
-    <div class="rollBtns">
-      <button class="btn btn-pink" onclick="rollUp()">⬆️ ROLL UP</button>
-      <button class="btn btn-green" onclick="rollDown()">⬇️ ROLL DOWN</button>
-    </div>
+    <div class="rollBtns"><button class="btn btn-pink" onclick="rollUp()">⬆️ ROLL UP</button><button class="btn btn-green" onclick="rollDown()">⬇️ ROLL DOWN</button></div>
     <div class="readerContent" id="readerContent" oncontextmenu="return false"></div>
     <button class="btn btn-orange" onclick="closeReader()">❌ CLOSE READER</button>
   </div>
 </div>
 
-<!-- ✅ PAYMENT METHODS AGREED -->
 <div id="payModal" class="modal">
   <div class="ceoBox" style="text-align:center">
     <h3 style="color:#ff1744">💰 PAY 2,500 TO CONTINUE</h3>
     <p style="font-size:13px;margin:8px 0">Your FREE downloads are finished.<br>Pay <b>2,500 UGX</b> once to DOWNLOAD FREELY FOREVER.</p>
-    <div class="payBox">
-      <b>✅ PAYMENT METHODS:</b><br>
-      1. <b>MTN MoMo:</b> 0782 - CEO Dr Daniel<br>
-      2. <b>Airtel Money:</b> 0782 - CEO Dr Daniel<br><br>
-      Send 2,500 to any of the above, then tap PAID.
-    </div>
+    <div class="payBox"><b>✅ PAYMENT METHODS:</b><br>1. <b>MTN MoMo:</b> 0782 - CEO Dr Daniel<br>2. <b>Airtel Money:</b> 0782 - CEO Dr Daniel<br><br>Send 2,500 to any of the above, then tap PAID.</div>
     <button class="btn btn-green" onclick="paidNow()">✅ I HAVE PAID - DOWNLOAD NOW</button><br><br>
     <button class="btn btn-pink" onclick="closePay()">❌ CANCEL</button>
   </div>
 </div>
 
-<!-- DOCTRINE CODE - CEO ONLY -->
 <div id="codeModal" class="modal">
   <div class="ceoBox">
     <h3 style="text-align:center;color:#ff1744">🔒 CEO - ENTER DOCTRINE CODE</h3>
@@ -99,125 +123,64 @@ body{background:#fff0f5;padding:10px;padding-bottom:80px}
   </div>
 </div>
 
-<!-- UPLOAD CENTRE - CEO ONLY -->
 <div id="uploadModal" class="modal">
   <div class="ceoBox">
     <h3 style="text-align:center;color:#00c853">✅ UPLOAD CENTRE UNLOCKED</h3>
     <p style="text-align:center;font-size:12px">Welcome CEO Dr Daniel • Keep it SHORT for students</p>
-    <select id="upSubject">
-      <option>Biology</option><option>Physics</option><option>Maths</option><option>Chemistry</option><option>Virus</option><option>General</option>
-    </select>
+    <select id="upSubject"><option>Biology</option><option>Physics</option><option>Maths</option><option>Chemistry</option><option>Virus</option><option>General</option></select>
     <input type="text" id="upTitle" placeholder="Title e.g. Physics Paper 1 - Motion">
-    <textarea id="upContent" placeholder="Paste SHORT information here... Keep it short, not overput. Students read easy."></textarea>
+    <textarea id="upContent" placeholder="Paste SHORT information here... Keep it short, not overput."></textarea>
     <button class="btn btn-green" style="width:100%" onclick="savePaper()">💾 SAVE PAPER</button>
     <button class="btn btn-pink" style="width:100%;margin-top:6px" onclick="closeUpload()">❌ CLOSE</button>
   </div>
 </div>
 
 <script>
-// ✅ DOCTRINE CODE - LOCKED
 let CEO_CODE = "0782";
-
-// ✅ SHORT PAPERS - NOT OVERPUT - EASY FOR STUDENTS
 let defaultPapers = [
   {subject:"Biology", title:"Biology Paper 1 - Cells", content:"BIOLOGY - CELLS\n\n1. Cell = smallest unit of life.\n2. Nucleus = controls cell.\n3. Mitochondria = gives energy.\n4. Plant has cell wall. Animal has no cell wall.\n\nEND - Dr Daniel"},
   {subject:"Physics", title:"Physics Paper 1 - Motion", content:"PHYSICS - MOTION\n\n1. Speed = Distance / Time\n2. Force = Mass x Acceleration\n3. Example: 100m in 10s = 10 m/s\n\nEND - Dr Daniel"},
   {subject:"Maths", title:"Maths Paper 1 - Numbers", content:"MATHS - NUMBERS\n\n1. 12 + 8 = 20\n2. 25 - 7 = 18\n3. 6 x 7 = 42\n4. 100 / 4 = 25\n\nEND - Dr Daniel"},
   {subject:"Virus", title:"Virus - What You Must Know", content:"VIRUS\n\n1. Very small, needs host.\n2. Examples: Flu, Corona, HIV\n3. Prevention: Wash hands, vaccinate.\n\nEND - Dr Daniel"}
 ];
-
 let papers = JSON.parse(localStorage.getItem("dr_papers") || "null") || defaultPapers;
 let freeDownloads = parseInt(localStorage.getItem("dr_free_dl") || "2");
 let hasPaid = localStorage.getItem("dr_paid") === "yes";
 let sharedDone = localStorage.getItem("dr_shared") === "yes";
 let pendingDownload = null;
-
 function saveAll(){ localStorage.setItem("dr_papers", JSON.stringify(papers)); localStorage.setItem("dr_free_dl", freeDownloads); }
-function updateStatus(){
-  if(hasPaid){ document.getElementById("statusBox").innerHTML = "✅ PAID 2,500 • DOWNLOAD FREELY FOREVER ♾️"; }
-  else { document.getElementById("statusBox").innerHTML = "🎁 FREE DOWNLOADS LEFT: " + freeDownloads + (sharedDone ? " | ✅ SHARE BONUS USED" : " | SHARE TO 5 GROUPS = +2 FREE"); }
-}
+function updateStatus(){ if(hasPaid){ document.getElementById("statusBox").innerHTML = "✅ PAID 2,500 • DOWNLOAD FREELY FOREVER ♾️"; } else { document.getElementById("statusBox").innerHTML = "🎁 FREE DOWNLOADS LEFT: " + freeDownloads + (sharedDone ? " | ✅ SHARE BONUS USED" : " | SHARE TO 5 GROUPS = +2 FREE"); } }
 function renderPapers(filter){
-  let html = "";
-  let groups = {};
+  let html = ""; let groups = {};
   papers.forEach((p,i)=>{ if(!groups[p.subject]) groups[p.subject]=[]; groups[p.subject].push({p:p, idx:i}); });
   for(let subj in groups){
     let cards = "";
-    groups[subj].forEach(obj=>{
-      if(filter && !((obj.p.title+" "+obj.p.subject+" "+obj.p.content).toLowerCase().includes(filter.toLowerCase()))) return;
-      cards += `<div class="paper"><b>${obj.p.title}</b><p>${obj.p.subject} • Tap DOWNLOAD on this file</p><button class="btn btn-green" onclick="tryDownload(${obj.idx})">⬇️ DOWNLOAD</button> <button class="btn btn-blue" onclick="openReader(${obj.idx})">👀 SEE</button></div>`;
-    });
+    groups[subj].forEach(obj=>{ if(filter && !((obj.p.title+" "+obj.p.subject+" "+obj.p.content).toLowerCase().includes(filter.toLowerCase()))) return; cards += `<div class="paper"><b>${obj.p.title}</b><p>${obj.p.subject} • Tap DOWNLOAD on this file</p><button class="btn btn-green" onclick="tryDownload(${obj.idx})">⬇️ DOWNLOAD</button> <button class="btn btn-blue" onclick="openReader(${obj.idx})">👀 SEE</button></div>`; });
     if(cards) html += `<div class="subject"><h2>📚 ${subj}</h2>${cards}</div>`;
   }
   if(!html) html = `<div style="text-align:center;padding:20px;background:white;border-radius:12px">No result. Try Physics, Biology, Maths...</div>`;
   document.getElementById("allPapers").innerHTML = html;
 }
 function doSearch(){ renderPapers(document.getElementById("searchInput").value); }
-function tryDownload(idx){
-  if(hasPaid){ doDownload(idx); return; }
-  if(freeDownloads > 0){ freeDownloads--; saveAll(); updateStatus(); doDownload(idx); }
-  else { pendingDownload = idx; document.getElementById("payModal").style.display="block"; }
-}
-function doDownload(idx){
-  let paper = papers[idx];
-  let blob = new Blob([paper.title + "\n\n" + paper.content + "\n\n- CEO Dr Daniel"], {type:"text/plain"});
-  let a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = paper.title.replace(/[^a-z0-9]/gi,'_') + ".txt";
-  a.click();
-  URL.revokeObjectURL(a.href);
-  openReader(idx);
-}
-function openReader(idx){
-  document.getElementById("readerTitle").innerText = papers[idx].title;
-  document.getElementById("readerContent").innerText = papers[idx].content;
-  document.getElementById("readerContent").scrollTop = 0;
-  document.getElementById("readerModal").style.display="block";
-}
+function searchFor(word){ document.getElementById("searchInput").value = word; renderPapers(word); document.getElementById("allPapers").scrollIntoView({behavior:"smooth"}); }
+function tryDownload(idx){ if(hasPaid){ doDownload(idx); return; } if(freeDownloads > 0){ freeDownloads--; saveAll(); updateStatus(); doDownload(idx); } else { pendingDownload = idx; document.getElementById("payModal").style.display="block"; } }
+function doDownload(idx){ let paper = papers[idx]; let blob = new Blob([paper.title + "\n\n" + paper.content + "\n\n- CEO Dr Daniel"], {type:"text/plain"}); let a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = paper.title.replace(/[^a-z0-9]/gi,'_') + ".txt"; a.click(); URL.revokeObjectURL(a.href); openReader(idx); }
+function openReader(idx){ document.getElementById("readerTitle").innerText = papers[idx].title; document.getElementById("readerContent").innerText = papers[idx].content; document.getElementById("readerContent").scrollTop = 0; document.getElementById("readerModal").style.display="block"; }
 function closeReader(){ document.getElementById("readerModal").style.display="none"; }
 function rollUp(){ document.getElementById("readerContent").scrollTop -= 200; }
 function rollDown(){ document.getElementById("readerContent").scrollTop += 200; }
 function closePay(){ document.getElementById("payModal").style.display="none"; }
-function paidNow(){
-  document.getElementById("payModal").style.display="none";
-  hasPaid = true; localStorage.setItem("dr_paid","yes"); updateStatus();
-  alert("✅ PAID! Now you can DOWNLOAD FREELY FOREVER!");
-  if(pendingDownload !== null){ doDownload(pendingDownload); pendingDownload = null; }
-}
-function shareToUnlock(){
-  if(sharedDone){ alert("You already used Share Bonus!"); return; }
-  let text = encodeURIComponent("Check CEO Dr Daniel Information Centre! 2 FREE Downloads!");
-  window.open("https://wa.me/?text=" + text, "_blank");
-  setTimeout(()=>{
-    if(confirm("Did you SHARE to 5 Groups? Instagram / Facebook / Twitter / WhatsApp? Tap OK to get +2 FREE DOWNLOADS.")){
-      freeDownloads += 2; sharedDone = true;
-      localStorage.setItem("dr_shared","yes"); saveAll(); updateStatus();
-      alert("✅ +2 FREE DOWNLOADS ADDED! Now you have " + freeDownloads);
-    }
-  }, 800);
-}
+function paidNow(){ document.getElementById("payModal").style.display="none"; hasPaid = true; localStorage.setItem("dr_paid","yes"); updateStatus(); alert("✅ PAID! Now you can DOWNLOAD FREELY FOREVER!"); if(pendingDownload !== null){ doDownload(pendingDownload); pendingDownload = null; } }
+function shareToUnlock(){ if(sharedDone){ alert("You already used Share Bonus!"); return; } let text = encodeURIComponent("Check CEO Dr Daniel Information Centre! 2 FREE Downloads!"); window.open("https://wa.me/?text=" + text, "_blank"); setTimeout(()=>{ if(confirm("Did you SHARE to 5 Groups? Instagram / Facebook / Twitter / WhatsApp? Tap OK to get +2 FREE DOWNLOADS.")){ freeDownloads += 2; sharedDone = true; localStorage.setItem("dr_shared","yes"); saveAll(); updateStatus(); alert("✅ +2 FREE DOWNLOADS ADDED! Now you have " + freeDownloads); } }, 800); }
 function openCodeModal(){ document.getElementById("codeModal").style.display="block"; document.getElementById("codeError").style.display="none"; document.getElementById("ceoCodeInput").value=""; }
 function closeCode(){ document.getElementById("codeModal").style.display="none"; }
-function checkCEOCode(){
-  let v = document.getElementById("ceoCodeInput").value.trim();
-  if(v === CEO_CODE){ document.getElementById("codeModal").style.display="none"; document.getElementById("uploadModal").style.display="block"; }
-  else { document.getElementById("codeError").style.display="block"; }
-}
+function checkCEOCode(){ let v = document.getElementById("ceoCodeInput").value.trim(); if(v === CEO_CODE){ document.getElementById("codeModal").style.display="none"; document.getElementById("uploadModal").style.display="block"; } else { document.getElementById("codeError").style.display="block"; } }
 function closeUpload(){ document.getElementById("uploadModal").style.display="none"; }
-function savePaper(){
-  let s = document.getElementById("upSubject").value;
-  let t = document.getElementById("upTitle").value.trim();
-  let c = document.getElementById("upContent").value.trim();
-  if(!t || !c){ alert("Fill Title and Content CEO!"); return; }
-  papers.unshift({subject:s, title:t, content:c});
-  saveAll();
-  document.getElementById("searchInput").value = "";
-  closeUpload(); renderPapers(""); updateStatus();
-  alert("✅ SAVED! '" + t + "' is now LIVE at TOP of " + s);
-  window.scrollTo(0,0);
-}
+function savePaper(){ let s = document.getElementById("upSubject").value; let t = document.getElementById("upTitle").value.trim(); let c = document.getElementById("upContent").value.trim(); if(!t || !c){ alert("Fill Title and Content CEO!"); return; } papers.unshift({subject:s, title:t, content:c}); saveAll(); document.getElementById("searchInput").value = ""; closeUpload(); renderPapers(""); updateStatus(); alert("✅ SAVED! '" + t + "' is now LIVE at TOP of " + s); window.scrollTo(0,0); }
 document.addEventListener("keydown", function(e){ if(document.getElementById("readerModal").style.display==="block" && (e.ctrlKey || e.metaKey)) e.preventDefault(); });
 updateStatus(); renderPapers("");
+// ✅ AUTO SLIDE BOOKS
+setInterval(()=>{ let el=document.getElementById("bookSlide"); if(el){ el.scrollLeft += 140; if(el.scrollLeft + el.clientWidth >= el.scrollWidth) el.scrollLeft = 0; } }, 2500);
 </script>
 </body>
-      </html>
+                                                                                                       </html>
